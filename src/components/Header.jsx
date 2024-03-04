@@ -20,12 +20,12 @@ const Header = () => {
                   </a>
                 </div>
 
-                <div
+                <button
                   onClick={() => setMenu(true)}
                   className="block menu-btn lg:hidden"
                 >
                   <i className="bi bi-list text-[26px]"></i>
-                </div>
+                </button>
               </div>
             </div>
             <div className="flex items-center col-span-11">
@@ -53,7 +53,7 @@ const Header = () => {
                       <li className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid active-nav">
                         <a
                           href="#how-it-works"
-                          className="text-sm font-normal text-white lg:hover:text-black lg:text-base xl:text-md lg:text-gray3"
+                          className="text-sm font-normal text-black/50 hover:text-black/90 lg:text-base xl:text-md lg:text-gray3"
                         >
                           How it works
                         </a>
@@ -61,7 +61,7 @@ const Header = () => {
                       <li className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid">
                         <a
                           href="#benefits"
-                          className="text-sm font-normal text-white lg:hover:text-black lg:text-base xl:text-md lg:text-gray3 "
+                          className="text-sm font-normal text-black/50 hover:text-black/90 lg:text-base xl:text-md lg:text-gray3 "
                         >
                           Benefits
                         </a>
@@ -69,7 +69,7 @@ const Header = () => {
                       <li className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid">
                         <a
                           href="#faqs"
-                          className="text-sm font-normal text-white lg:hover:text-black lg:text-base xl:text-md lg:text-gray3 "
+                          className="text-sm font-normal text-black/50 hover:text-black/90 lg:text-base xl:text-md lg:text-gray3 "
                         >
                           FAQs
                         </a>
@@ -80,7 +80,7 @@ const Header = () => {
                       >
                         <a
                           href="#faqs"
-                          className="text-sm font-normal text-white lg:hover:text-black lg:text-base xl:text-md lg:text-gray3 "
+                          className="text-sm font-normal text-black/50 hover:text-black/90 lg:text-base xl:text-md lg:text-gray3 "
                         >
                           Eligible Products
                         </a>
@@ -91,7 +91,7 @@ const Header = () => {
                     <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  lg:mt-2 border-b-2 border-transparent  border-solid">
                       <a
                         href="#"
-                        className="text-base font-medium text-white lg:hover:text-black lg:text-base xl:text-lg lg:text-gray3 "
+                        className="text-base font-normal text-black/50 hover:text-black/90 lg:text-sm xl:text-base lg:text-gray3"
                       >
                         Log in
                       </a>
@@ -99,7 +99,7 @@ const Header = () => {
                     <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit lg:mt-1  ">
                       <a
                         href="#"
-                        className="sign-in text-[14px] lg:text-[14px] xl:text-base text-white font-medium lg:text-white border-2 hover:shadow-custom hover:border-2 border-black rounded-[30px]  px-4 py-2 border-solid bg-black lg:bg-black hover:bg-white lg:hover:text-black"
+                        className="sign-in lg:text-sm xl:text-base e text-white font-normal lg:text-white border-2 hover:shadow-custom hover:border-2 border-black rounded-[30px]  px-4 py-2 border-solid bg-black lg:bg-black hover:bg-white lg:hover:text-black"
                       >
                         Start Saving
                       </a>
@@ -108,79 +108,77 @@ const Header = () => {
                 </div>
               </div>
             </div>
-
+            {/* mobile menu */}
             <div
-              className={`mb-5 lg:hidden  lg:mb-0 transition-all duration-300   fixed top-0 left-0 right-0 bottom-0 lg:relative h-[100vh] lg:h-auto w-full   bg-selfYellow lg:bg-white flex justify-center items-center ${
+              className={`mb-5 lg:hidden  lg:mb-0 transition-all duration-300   fixed top-0 left-0 right-0 bottom-0 lg:relative pb-5 h-max border-b lg:h-auto w-full   bg-white lg:bg-white flex justify-center items-start ${
                 menu ? "scale-100" : "scale-0"
               }`}
             >
               <div className="grid w-full grid-cols-9 ">
-                <div
+                <div className="block mb-4 lg:hidden absolute left-[30px] top-[22px]">
+                  <a href="#">
+                    <img src={Logo} alt="" className="h-[45px] w-auto" />
+                  </a>
+                </div>
+                <button
                   onClick={() => setMenu(false)}
                   className="lg:hidden block ms-auto absolute top-[30px] right-[30px]"
                 >
-                  <i className="bi bi-x-lg text-[20px] text-white"></i>
-                </div>
-                <div className="flex items-center justify-start col-span-9 lg:col-span-6 ">
-                  <ul className="flex flex-col items-center justify-center text-start lg:flex-row lg:mt-2 ">
-                    <li>
-                      <div className="block mb-4 lg:hidden">
-                        <a href="#">
-                          <img src={Logo} alt="" className="h-[65px] w-auto" />
-                        </a>
-                      </div>
-                    </li>
-                    <li className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid active-nav">
+                  <i className="bi bi-x-lg text-[20px] text-black/40"></i>
+                </button>
+                <div className="flex items-center justify-start col-span-9 pt-24 lg:col-span-6 ">
+                  <ul className="flex flex-col items-center justify-center w-full text-start lg:flex-row lg:mt-2 ">
+                    <li className="lg:ms-[20px]  xl:ms-[25px]  mb-3.5 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid active-nav">
                       <a
                         href="#how-it-works"
-                        className="text-base font-medium text-white lg:hover:text-black lg:text-base xl:text-lg lg:text-gray3 "
+                        className="text-base font-medium text-black/50 hover:text-black/90 lg:text-base xl:text-lg lg:text-gray3 "
                       >
                         How it works
                       </a>
                     </li>
 
-                    <li className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid">
+                    <li className="lg:ms-[20px]  xl:ms-[25px]  mb-3.5 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid">
                       <a
                         href="#benefits"
-                        className="text-base font-medium text-white lg:hover:text-black lg:text-base xl:text-lg lg:text-gray3 "
+                        className="text-base font-medium text-black/50 hover:text-black/90 lg:text-base xl:text-lg lg:text-gray3 "
                       >
                         Benefits
                       </a>
                     </li>
                     <li
                       id="faq-item"
-                      className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid"
+                      className="lg:ms-[20px]  xl:ms-[25px]  mb-3.5 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid"
                     >
                       <a
                         href="#faqs"
-                        className="text-base font-medium text-white lg:hover:text-black lg:text-base xl:text-lg lg:text-gray3 "
+                        className="text-base font-medium text-black/50 hover:text-black/90 lg:text-base xl:text-lg lg:text-gray3 "
                       >
                         FAQs
                       </a>
                     </li>
                     <li
                       id="form-item"
-                      className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid"
+                      className="lg:ms-[20px]  xl:ms-[25px]  mb-3.5 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid"
                     >
                       <a
                         href="#form"
-                        className="text-base font-medium text-white lg:hover:text-black lg:text-base xl:text-lg lg:text-gray3 "
+                        className="text-base font-medium text-black/50 hover:text-black/90 lg:text-base xl:text-lg lg:text-gray3 "
                       >
                         Eligible Products
                       </a>
                     </li>
                   </ul>
                 </div>
-                <div className="flex flex-col items-center justify-end col-span-9 lg:col-span-3 lg:flex-row">
+                <div className="flex flex-col items-center justify-end col-span-9 mt-5 lg:col-span-3 lg:flex-row">
                   <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  lg:mt-2 border-b-2 border-transparent  border-solid">
                     <a
                       href="#"
-                      className="text-base font-medium text-white lg:hover:text-black lg:text-base xl:text-lg lg:text-gray3 "
+                      className="text-base font-medium text-black/50 hover:text-black/90 lg:text-base xl:text-lg lg:text-gray3 "
                     >
                       Log in
                     </a>
                   </div>
-                  <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit lg:mt-1  ">
+                  <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit lg:mt-1  mt-2 ">
                     <a
                       href="https://nymfcu-dn.financial-net.com/web"
                       className="sign-in text-[14px] lg:text-[14px] xl:text-base text-white font-medium lg:text-white border-2 hover:shadow-custom hover:border-2 border-black rounded-[30px]  px-4 py-2 border-solid bg-black lg:bg-black hover:bg-white lg:hover:text-black"
