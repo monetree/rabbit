@@ -99,7 +99,7 @@ const Header = () => {
                     </div>
                     <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit lg:mt-1  ">
                       <Link
-                        to="/survey"
+                        to={`${import.meta.env.VITE_MARKETPLACE_URL}/typeform`}
                         className="flex px-6 py-3 text-sm font-semibold text-white transition-all duration-300 bg-black rounded-full max-w-max font-Inter group hover:pl-4"
                       >
                         Start Saving
@@ -182,7 +182,7 @@ const Header = () => {
                   </div>
                   <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit lg:mt-1  mt-2 ">
                     <Link
-                      to="/login"
+                      to={`${import.meta.env.VITE_MARKETPLACE_URL}/typeform`}
                       className="sign-in text-[14px] lg:text-[14px] xl:text-base text-white font-medium lg:text-white border-2 hover:shadow-custom hover:border-2 border-black rounded-[30px]  px-4 py-2 border-solid bg-black lg:bg-black hover:bg-white lg:hover:text-black"
                     >
                       Start Saving
