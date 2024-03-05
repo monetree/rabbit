@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 
 const Header = () => {
@@ -89,20 +90,21 @@ const Header = () => {
                   </div>
                   <div className="flex flex-col items-center justify-end col-span-9 lg:col-span-3 lg:flex-row">
                     <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  lg:mt-2 border-b-2 border-transparent  border-solid">
-                      <a
-                        href="#"
+                      <Link
+                        to="/login"
                         className="text-base font-normal text-black/50 hover:text-black/90 lg:text-sm xl:text-base lg:text-gray3"
                       >
                         Log in
-                      </a>
+                      </Link>
                     </div>
                     <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit lg:mt-1  ">
-                      <a
-                        href="#"
-                        className="sign-in lg:text-sm xl:text-base e text-white font-normal lg:text-white border-2 hover:shadow-custom hover:border-2 border-black rounded-[30px]  px-4 py-2 border-solid bg-black lg:bg-black hover:bg-white lg:hover:text-black"
+                      <Link
+                        to="/survey"
+                        className="flex px-6 py-3 text-sm font-semibold text-white transition-all duration-300 bg-black rounded-full max-w-max font-Inter group hover:pl-4"
                       >
                         Start Saving
-                      </a>
+                        <i className="w-0 transition-all transform scale-0 bi bi-arrow-right group-hover:w-auto group-hover:scale-100 group-hover:ml-3 "></i>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -171,20 +173,20 @@ const Header = () => {
                 </div>
                 <div className="flex flex-col items-center justify-end col-span-9 mt-5 lg:col-span-3 lg:flex-row">
                   <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  lg:mt-2 border-b-2 border-transparent  border-solid">
-                    <a
-                      href="#"
+                    <Link
+                      to="/login"
                       className="text-base font-medium text-black/50 hover:text-black/90 lg:text-base xl:text-lg lg:text-gray3 "
                     >
                       Log in
-                    </a>
+                    </Link>
                   </div>
                   <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit lg:mt-1  mt-2 ">
-                    <a
-                      href="https://nymfcu-dn.financial-net.com/web"
+                    <Link
+                      to="/login"
                       className="sign-in text-[14px] lg:text-[14px] xl:text-base text-white font-medium lg:text-white border-2 hover:shadow-custom hover:border-2 border-black rounded-[30px]  px-4 py-2 border-solid bg-black lg:bg-black hover:bg-white lg:hover:text-black"
                     >
                       Start Saving
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
