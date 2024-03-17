@@ -1,185 +1,241 @@
-import React from "react";
-import HeadingBg from "../assets/images/benefits-heading.svg";
-import BenefitsIMG from "../assets/images/benefits-graphic.webp";
+import React from 'react';
 
 const Pricing = () => {
   return (
-    <section id="benefits" className="py-16 lg:py-24">
-      <div className="container mx-auto">
-        <div className="text-center">
-          <span className="uppercase font-Inter bg-lightGray font-medium text-lightGray2 px-3 py-0.5 text-xs  rounded-full inline-block">
-            Pricing
-          </span>
+    <section
+      id='eligibleProducts'
+      className='px-4 pt-12 bg-bottom bg-cover xl:px-36 about-section pb-14 bg-lightBeige'
+    >
+      <div className='container mx-auto'>
+        <div className='text-center'>
+          <p className='text-base font-semibold leading-5 tracking-normal text-center uppercase font-lato text-coffee '>
+            pricing
+          </p>
+
+          <h1 className='mt-4 text-3xl font-semibold tracking-normal text-center capitalize font-epilogue lg:text-4xl leading-13'>
+            Choose You Tariff And Start Right Now
+          </h1>
+
+          <p className='mt-4 text-base font-medium leading-7 tracking-normal text-center text-gray-600 font-epilogue'>
+            We accept HSA payments, so don’t waste your time - join our
+            platform!
+          </p>
         </div>
 
-        <div className="mx-auto max-w-[1280px] px-8">
-          <div className="flex flex-wrap items-center justify-center mt-16 md:flex-nowrap gap-x-4 lg:gap-x-8">
-            <div className="">
-              <div className="bg-white rounded-[20px] p-7  shadow-box-cu max-w-[3659px] ">
-                <span className="mb-5 text-sm font-Inter text-gray4">
-                  Beginner Saver
-                </span>
-                <div className="flex mb-5">
-                  <span className="text-[54px] leading-snug text-gray2 font-bold font-Inter mt-2">
-                    $99
-                  </span>
-                  <span className="mt-auto mb-4 ml-1 text-sm font-medium text-gray4 font-Inter">
-                    annually
-                  </span>
+        <div className='mx-auto '>
+          <div className='flex flex-col content-center gap-5 mt-8 lg:flex-row'>
+            <div className='relative basis-3/3 lg:basis-1/3 md:basis-2/3'>
+              <div className='h-full bg-white rounded-3xl px-7 pt-7 lg:pt-9 pb-28'>
+                <div className='flex items-center justify-between w-full mb-7'>
+                  <h1 className='text-2xl font-semibold text-darkGreen lg:text-3xl'>
+                    Beginner
+                    <br />
+                    Saver
+                  </h1>
+                  <div className='text-center'>
+                    <span className='text-4xl font-semibold lg:text-5xl text-darkGreen '>
+                      $30
+                    </span>
+                    <div>
+                      <span className='text-sm text-gray-600 '>
+                        Per Product
+                      </span>
+                    </div>
+                  </div>
                 </div>
                 <ul>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
-                      Save on one of your favorite wellness products
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium md:text-base text-selfGray'>
+                      Save on one wellness product
                     </span>
                   </li>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
-                      Access to one Letter of Medical Necessity
+
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium md:text-base text-selfGray'>
+                      Access to one LMN
                     </span>
                   </li>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
-                      Average savings of $95 annually
+
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium md:text-base text-selfGray'>
+                      Average savings of $180 annually
                     </span>
                   </li>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
+
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium md:text-base text-selfGray'>
                       Reimbursement support
                     </span>
                   </li>
                 </ul>
-
-                <button className="block px-4 py-2 mb-2 text-sm font-medium rounded-lg bg-lightGray font-Inter text-gray6 max-h-max mt-7">
-                  Start Saving
-                </button>
+                <div
+                  className='absolute bottom-5 lg:bottom-7 left-7 right-7   border-2 mt-auto hover:shadow-custom  border-darkGreen rounded-[30px] cursor-pointer
+                 text-center border-solid  hover:bg-darkGreen hover:text-white  text-darkGreen   h-12 flex align-middle justify-center items-center'
+                >
+                  <a href='' className='text-base font-semibold leading-5'>
+                    Start Saving
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="pt-10 md:pt-0">
-              <div className="bg-white rounded-[20px] p-7 shadow-box-cu max-w-[360px] pr-2 border-gray6 border-[3px] ">
-                <span className="mb-5 text-sm font-Inter text-gray4">
-                  Beginner Saver
-                </span>
-                <div className="flex mb-5">
-                  <span className="text-[54px] leading-snug text-gray2 font-bold font-Inter mt-2">
-                    $79
-                  </span>
-                  <span className="mt-auto mb-4 ml-1 text-sm font-medium text-gray4 font-Inter">
-                    per product
-                  </span>
+            <div className='relative basis-3/3 lg:basis-1/3 md:basis-2/3'>
+              <div
+                className='h-full bg-coffee rounded-3xl px-7 pt-7 lg:pt-9 pb-28'
+                style={{ boxShadow: '0px 4px 20px 0px #CB896659' }}
+              >
+                <div className='flex items-center justify-between w-full mb-7'>
+                  <h1 className='text-2xl font-semibold text-white lg:text-3xl'>
+                    Ultimate <br />
+                    Saver
+                  </h1>
+                  <div className='text-center'>
+                    <span className='text-4xl font-semibold text-white lg:text-5xl '>
+                      $99
+                    </span>
+                    <div>
+                      <span className='text-sm text-white '>annually</span>
+                    </div>
+                  </div>
                 </div>
                 <ul>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
-                      Save on many wellness products
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium text-white md:text-base'>
+                      Save on one wellness product
                     </span>
                   </li>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
+
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium text-white md:text-base'>
                       Access to all eligible LMNs
                     </span>
                   </li>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
+
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium text-white md:text-base'>
                       12 months of access
                     </span>
                   </li>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
+
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium text-white md:text-base'>
                       Average savings of $395 annually
                     </span>
                   </li>
 
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium text-white md:text-base'>
                       Reimbursement support
                     </span>
                   </li>
 
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium text-white md:text-base'>
                       Early access to new savings products
                     </span>
                   </li>
 
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium text-white md:text-base'>
                       Exclusive partner discounts
                     </span>
                   </li>
                 </ul>
-
-                <button className="block px-4 py-2 mt-8 mb-2 text-sm font-medium rounded-lg text-lightGray font-Inter bg-gray6 max-h-max">
-                  Start Saving
-                </button>
+                <div
+                  className='absolute bottom-5 lg:bottom-7 left-7 right-7 bg-darkGreen/80  border-2 mt-auto hover:shadow-custom  border-darkGreen rounded-[30px] cursor-pointer
+              text-center border-solid   text-white   h-12 flex align-middle justify-center items-center'
+                >
+                  <a href='' className='text-base font-medium leading-5'>
+                    Start Saving
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="pt-10 md:pt-0">
-              <div className="bg-white rounded-[20px] p-7  shadow-box-cu max-w-[360px] ">
-                <span className="mb-5 text-sm font-Inter text-gray4">
-                  Pro Saver
-                </span>
-                <div className="flex mb-5">
-                  <span className="text-[54px] leading-snug text-gray2 font-bold font-Inter mt-2">
-                    $79
-                  </span>
-                  <span className="mt-auto mb-4 ml-1 text-sm font-medium text-gray4 font-Inter">
-                    annually
-                  </span>
+            <div className='relative basis-3/3 lg:basis-1/3 md:basis-2/3'>
+              <div className='h-full bg-white rounded-3xl px-7 pt-7 lg:pt-9 pb-28'>
+                <div className='flex items-center justify-between w-full mb-7'>
+                  <h1 className='text-2xl font-semibold text-darkGreen lg:text-3xl'>
+                    Pro <br />
+                    Saver
+                  </h1>
+                  <div className='text-center'>
+                    <span className='text-4xl font-semibold lg:text-5xl text-darkGreen '>
+                      $79
+                    </span>
+                    <div>
+                      <span className='text-sm text-gray-600 '>annually</span>
+                    </div>
+                  </div>
                 </div>
                 <ul>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
-                      Save on one of your favorite wellness products
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium md:text-base text-selfGray'>
+                      Save on one wellness product
                     </span>
                   </li>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
-                      Access to one Letter of Medical Necessity
+
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium md:text-base text-selfGray'>
+                      Access to three LMNs
                     </span>
                   </li>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
-                      Average savings of $265 annually
+
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium md:text-base text-selfGray'>
+                      12 months of access
                     </span>
                   </li>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
+
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium md:text-base text-selfGray'>
                       Reimbursement support
                     </span>
                   </li>
-                  <li className="flex items-center mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-gray2"></i>
-                    <span className="text-sm font-medium text-gray4 font-Inter">
-                      Exclusive beta access to new savings products
+
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium md:text-base text-selfGray'>
+                      Average savings of $265 annually
+                    </span>
+                  </li>
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium md:text-base text-selfGray'>
+                      Reimbursement support
+                    </span>
+                  </li>
+                  <li className='flex items-start mb-2'>
+                    <i className='mr-2 bi bi-check-circle-fill text-darkGreen '></i>
+                    <span className='text-sm font-medium md:text-base text-selfGray'>
+                      Access to new savings products
                     </span>
                   </li>
                 </ul>
 
-                <button className="block px-4 py-2 mb-2 text-sm font-medium rounded-lg bg-lightGray font-Inter text-gray6 max-h-max mt-7">
-                  Start Saving
-                </button>
+                <div
+                  className='absolute bottom-5 lg:bottom-7 left-7 right-7   border-2 mt-auto hover:shadow-custom  border-darkGreen rounded-[30px] cursor-pointer
+                 text-center border-solid  hover:bg-darkGreen hover:text-white  text-darkGreen   h-12 flex align-middle justify-center items-center'
+                >
+                  <a href='' className='text-base font-semibold leading-5'>
+                    Start Saving
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="px-5 pt-10 text-lg font-bold text-center lg:pt-16 xl:pt-20">
-            We accept HSA payments
           </div>
         </div>
       </div>

@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .active-nav {
+    @apply border-b-2 border-white border-solid lg:border-coffee;
+  }
+
+  .active-nav a {
+    @apply text-white lg:text-coffee;
+  }
+
+  .main-heading {
+    @apply font-[500] leading-normal relative w-fit;
+  }
+
+  .heading2 {
+    @apply text-[24px] leading-normal md:text-2xl font-semibold text-gray-800;
+  }
+
+  .heading3 {
+    @apply font-semibold text-gray-800;
+  }
+
+  .text {
+    @apply font-normal text-gray-600;
+  }
+}
+
+body {
+  /* font-family: "Roboto", sans-serif; */
+  font-family: 'Epilogue', sans-serif;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  height: inherit !important;
+}
+
+.container {
+  max-width: 1200px !important;
+}
+
+/* Add this CSS to your stylesheet */
+.carousel-item {
+  transition: opacity 1s ease;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  display: block !important;
+}
+
+/* [dir='rtl'] .slider2 {
+    float: left;
+} */
+
+.carousel__slide {
+  position: relative;
+  display: block;
+  flex: 1 0 100%;
+  width: 100%;
+  height: width;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+  box-sizing: border-box;
+  white-space: normal;
+}
+
+.carousel__slide figure {
+  display: flex;
+  margin: 0;
+}
+
+.carousel__slide div {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel__slide div:before {
+  display: block;
+  content: '';
+  padding-top: 100%;
+}
+
+.carousel__slide div > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slick-next {
+  right: -50px !important;
+}
+
+.slick-prev {
+  left: -50px !important;
+}
+
+.slick-next,
+.slick-prev {
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid white;
+  border-radius: 50%;
+  opacity: 0.7;
+  text-align: center;
+  transition: all 0.3s;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel__slide img {
+  display: block;
+  flex: 1 1 auto;
+  object-fit: cover;
+}
+
+.carousel__slide .credit {
+  margin-top: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.carousel__slide.scrollable {
+  overflow-y: scroll;
+}
+
+@media only screen and (max-width: 767px) {
+  .carousel__slide div {
+    width: 100%;
+  }
+
+  .slick-next {
+    right: -15px !important;
+  }
+
+  .slick-prev {
+    left: -15px !important;
+  }
+
+  .slick-next,
+  .slick-prev {
+    background: transparent;
+    width: 20px;
+    height: 20px;
+    border: 0px solid transparent !important;
+  }
+}
+
+@layer utilities {
+  .slick-active.slick-center .rounded-full:not(img) {
+    @apply border-2 border-coffee;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}

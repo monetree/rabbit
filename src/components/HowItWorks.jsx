@@ -1,98 +1,186 @@
-import React from "react";
-import HeadingBg from "../assets/images/heading-bg.svg";
-import OneImg from "../assets/images/how-it-works/1.png";
-import TwoImg from "../assets/images/how-it-works/2.png";
-import ThreeImg from "../assets/images/how-it-works/3.png";
-import FourImg from "../assets/images/how-it-works/4.png";
+import React from 'react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
+import Step1IMG from '../assets/images/step1.svg';
+import Step2IMG from '../assets/images/step2.svg';
+import Step3IMG from '../assets/images/step3.svg';
+import Step4IMG from '../assets/images/step4.svg';
 
 const HowItWorks = () => {
+  var settings = {
+    dots: false,
+    infinite: false,
+    speed: 300,
+    arrows: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
+  };
   return (
-    <section id="how-it-works" className="py-16 lg:py-24">
-      <div className="container px-5 mx-auto sm:px-6">
-        <div className="text-center">
-          <span className="uppercase font-Inter bg-lightGray font-semibold text-lightGray2 px-3 py-0.5 text-xs  rounded-full inline-block">
-            how it works
-          </span>
-          <h1 className="xl:text-[52px] lg:text-[44px] text-3xl max-w-[1080px] leading-tight relative mt-4 font-semibold">
+    <section
+      id='howItWorks'
+      class='px-5 md:px-20  bg-cover bg-bottom  pb-14 pt-12 bg-darkGreen'
+    >
+      <div class='container mx-auto'>
+        <div class='text-center md:w-[75%] mx-auto'>
+          <p class='font-lato text-base font-semibold leading-5 tracking-normal text-center text-white uppercase '>
+            How It Works
+          </p>
+
+          <h1 class='font-epilogue text-3xl lg:text-4xl font-semibold leading-13 tracking-normal text-center capitalize mt-4 text-white'>
             Use your HSA dollars on wellness products you actually love, without
             hassle.
-            <img
-              src={HeadingBg}
-              alt=""
-              className="max-w-[320px] absolute top-1/2 left-[20%] z-[-1]"
-            />
           </h1>
-        </div>
 
-        <div className="max-w-[1080px] px-5 mx-auto pt-20">
-          <div className="flex flex-wrap -mx-7">
-            <div className="lg:basis-1/4 md:basis-1/2 basis-full p-7">
-              <div className="flex flex-col items-center justify-center">
-                <div className="rounded-[20px] overflow-hidden h-[205px]  aspect-square relative ">
-                  <img src={OneImg} />
+          {/* <p class='font-epilogue text-base font-medium leading-7 tracking-normal text-center text-white mt-4'>
+            Explore a vast array of high-quality pharmaceuticals, supplements
+            and healthcare products. Explore a vast array of high-quality
+            pharmaceuticals, supplements and healthcare products
+          </p> */}
+        </div>
+        <Slider {...settings} className='mt-8 lg:mt-10'>
+          <div class='h-full'>
+            <div class='px-3 h-full'>
+              <div class='rounded-2xl bg-white p-7  h-full'>
+                <div class='flex justify-between items-start w-full'>
+                  <div class='bg-darkGreen text-white text-sm font-medium flex justify-center items-center px-4 rounded-lg py-1'>
+                    Step 1
+                  </div>
+                  <img src={Step1IMG} alt='' class='' />
                 </div>
 
-                <h2 className="text-gray2 font-bold text-2xl max-w-40 text-center mx-auto mt-7">
-                  Check your eligibility
-                </h2>
-                <p className="text-gray5 font-medium text-center mt-2.5 lg:text-lg text-base">
+                <div class=' border-darkGreen border-b-[1px]  mb-8 w-full md:min-h-[117px]'>
+                  <h2 class='text-darkGreen font-semibold text-2xl mt-6 mb-5 pb-0'>
+                    Check your
+                    <br /> eligibility
+                  </h2>
+                </div>
+                <p class='font-normal text-gray-600 text-base'>
                   Take a few minutes survey to assess your medical eligibility
                   (e.g. anyone who is preventing, managing, or reversing
-                  disease)
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:basis-1/4 md:basis-1/2 basis-full p-7">
-              <div className="flex flex-col items-center justify-center">
-                <div className="rounded-[20px] overflow-hidden h-[205px]  aspect-square relative ">
-                  <img src={TwoImg} />
-                </div>
-
-                <h2 className="text-gray2 font-bold text-2xl  text-center mx-auto mt-7">
-                  Issue a letter of medical necessity
-                </h2>
-                <p className="text-gray5 font-medium text-center mt-2.5 lg:text-lg text-base">
-                  Our medical team reviews your details and issues a LMN in
-                  real-time making you eligible to use HSA dollars on the
-                  product
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:basis-1/4 md:basis-1/2 basis-full p-7">
-              <div className="flex flex-col items-center justify-center">
-                <div className="rounded-[20px] overflow-hidden h-[205px]  aspect-square relative">
-                  <img src={ThreeImg} />
-                </div>
-
-                <h2 className="text-gray2 font-bold text-2xl  text-center mx-auto mt-7">
-                  Purchase your favorite products
-                </h2>
-                <p className="text-gray5 font-medium text-center mt-2.5 lg:text-lg text-base">
-                  Use your personal card at checkout as you normally would,
-                  avoiding annoying HSA card declines
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:basis-1/4 md:basis-1/2 basis-full p-7">
-              <div className="flex flex-col items-center justify-center">
-                <div className="rounded-[20px] overflow-hidden h-[205px]  aspect-square relative">
-                  <img src={FourImg} />
-                </div>
-
-                <h2 className="text-gray2 font-bold text-2xl max-w-40 text-center mx-auto mt-7">
-                  Automate reimbursement
-                </h2>
-                <p className="text-gray5 font-medium text-center mt-2.5 lg:text-lg text-base">
-                  Send us your receipt and we partner with your HSA admin to
-                  ensure you are reimbursed in a timely manner (4-21 days)
+                  disease).
                 </p>
               </div>
             </div>
           </div>
-        </div>
+
+          <div class='h-full'>
+            <div class='px-3 h-full'>
+              <div class='rounded-2xl bg-white p-7 h-full'>
+                <div class='flex justify-between items-start w-full'>
+                  <div class='bg-darkGreen text-white text-sm font-medium flex justify-center items-center px-4 rounded-lg py-1'>
+                    Step 2
+                  </div>
+                  <img src={Step2IMG} alt='' class='' />
+                </div>
+
+                <div class=' border-darkGreen border-b-[1px]  mb-8 w-full md:min-h-[117px]'>
+                  <h2 class='text-darkGreen font-semibold text-2xl mt-6 mb-5 pb-0'>
+                    Issue a <br />
+                    letter of medical necessity
+                  </h2>
+                </div>
+                <p class='font-normal text-gray-600 text-base'>
+                  Our medical team reviews your details and issues a LMN in
+                  real-time making you eligible to use HSA dollars on the
+                  product.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class='h-full'>
+            <div class='px-3 h-full'>
+              <div class='rounded-2xl bg-white p-7  h-full'>
+                <div class='flex justify-between items-start w-full'>
+                  <div class='bg-darkGreen text-white text-sm font-medium flex justify-center items-center px-4 rounded-lg py-1'>
+                    Step 3
+                  </div>
+                  <img src={Step3IMG} alt='' class='' />
+                </div>
+
+                <div class=' border-darkGreen border-b-[1px]  mb-8 w-full md:min-h-[117px]'>
+                  <h2 class='text-darkGreen font-semibold text-2xl mt-6 mb-5 pb-0 '>
+                    Purchase <br />
+                    your favorite products
+                  </h2>
+                </div>
+                <p class='font-normal text-gray-600 text-base'>
+                  Use your personal card at checkout as you normally would,
+                  avoiding annoying HSA card declines.{' '}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class='h-full'>
+            <div class='px-3 h-full'>
+              <div class='rounded-2xl bg-white p-7  h-full'>
+                <div class='flex justify-between items-start w-full'>
+                  <div class='bg-darkGreen text-white text-sm font-medium flex justify-center items-center px-4 rounded-lg py-1'>
+                    Step 4
+                  </div>
+                  <img src={Step4IMG} alt='' class='' />
+                </div>
+
+                <div class=' border-darkGreen border-b-[1px]  mb-8 w-full md:min-h-[117px] '>
+                  <h2 class='text-darkGreen font-semibold text-2xl mt-6 mb-5 pb-0'>
+                    Automate reimbursement
+                  </h2>
+                </div>
+                <p class='font-normal text-gray-600 text-base'>
+                  Send us your receipt and we partner with your HSA admin to
+                  ensure you are reimbursed in a timely manner (4-21 days).
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class='h-full'>
+            <div class='px-3 h-full'>
+              <div class='rounded-2xl bg-white p-7  h-full'>
+                <div class='flex justify-between items-start w-full'>
+                  <div class='bg-darkGreen text-white text-sm font-medium flex justify-center items-center px-4 rounded-lg py-1'>
+                    Step 5
+                  </div>
+                  <img src={Step4IMG} alt='' class='' />
+                </div>
+
+                <div class=' border-darkGreen border-b-[1px]  mb-8 w-full md:min-h-[117px] '>
+                  <h2 class='text-darkGreen font-semibold text-2xl mt-6 mb-5 pb-0'>
+                    Automate reimbursement
+                  </h2>
+                </div>
+                <p class='font-normal text-gray-600 text-base'>
+                  Send us your receipt and we partner with your HSA admin to
+                  ensure you are reimbursed in a timely manner (4-21 days).
+                </p>
+              </div>
+            </div>
+          </div>
+        </Slider>
       </div>
     </section>
   );

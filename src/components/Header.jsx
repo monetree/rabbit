@@ -1,192 +1,126 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Logo from "../assets/images/logo.png";
+import React, { useState } from 'react';
+import Logo from '../assets/images/Logo.png';
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
   return (
-    <div className="fixed top-0 left-0 right-0 z-20 font-medium font-Inter">
-      <div className=" relative bg-white px-3 lg:px-4 top-navbar border-b-[1px] border-gray7-300">
-        <div className=" mx-auto max-w-[1220px] pt-2 pb-3 px-5 ">
-          <div className="grid grid-cols-12 md:py-1 lg:py-4">
-            <div className="col-span-12 lg:col-span-1">
-              <div className="flex items-center justify-between">
-                <div className="logo-div">
-                  <a href="#">
-                    <img
-                      src={Logo}
-                      alt="Logo"
-                      className="h-[45px] lg:h-[45px] lg:w-auto"
-                    />
+    <div class='fixed top-0 left-0 right-0 z-40  '>
+      <div
+        div
+        class=' relative bg-white px-3 lg:px-4 top-navbar border-b  border-selfGray/30 pt-1'
+      >
+        <div class='container mx-auto my-auto '>
+          <div class='grid grid-cols-12 h-16 lg:h-20'>
+            <div class='col-span-12 lg:col-span-3 '>
+              <div class='flex justify-between items-center h-full mt-1'>
+                <div class='logo-div'>
+                  <a href='#'>
+                    <img src={Logo} alt='' class=' h-6' />
                   </a>
                 </div>
 
-                <button
+                <div
                   onClick={() => setMenu(true)}
-                  className="block menu-btn lg:hidden"
+                  class='menu-btn block lg:hidden'
                 >
-                  <i className="bi bi-list text-[26px]"></i>
-                </button>
+                  <i class='bi bi-list text-[26px]'></i>
+                </div>
               </div>
             </div>
-            <div className="flex items-center col-span-11">
-              <div className=" mb-5 lg:mb-0 transition-all duration-300  hidden lg:flex  fixed top-0 left-0 right-0 bottom-0 lg:relative h-[100vh] lg:h-auto w-full   bg-selfYellow lg:bg-white  justify-center items-center">
-                <div className="grid w-full grid-cols-9 ">
+            <div class='col-span-9 flex items-center '>
+              <div
+                class={`
+              manu-div mb-5 lg:mb-0 transition-all duration-300  ${
+                menu ? 'scale-100' : 'scale-0'
+              }  lg:scale-[1]  fixed top-0 left-0 right-0 bottom-0 lg:relative h-[100vh] lg:h-auto w-full   bg-darkGreen lg:bg-white flex justify-center items-center
+              `}
+              >
+                <div class='grid grid-cols-9 w-full '>
                   <div
                     onClick={() => setMenu(false)}
-                    className="close-btn hidden ms-auto absolute top-[30px] right-[30px]"
+                    class='close-btn block lg:hidden ms-auto absolute top-[30px] right-[30px]'
                   >
-                    <i className="bi bi-x-lg text-[20px] text-white"></i>
+                    <i class='bi bi-x-lg text-[20px] text-white'></i>
                   </div>
-                  <div className="flex items-center justify-start col-span-9 lg:col-span-6 ">
-                    <ul className="flex flex-col items-center justify-center text-start lg:flex-row lg:mt-2 ">
+                  <div class='col-span-9 lg:col-span-6 flex items-center justify-center '>
+                    <ul class='flex items-center justify-center  text-start flex-col lg:flex-row lg:mt-2  '>
                       <li>
-                        <div className="block mb-4 lg:hidden">
-                          <a href="#">
-                            <img
-                              src={Logo}
-                              alt=""
-                              className="h-[65px] w-auto"
-                            />
+                        <div class='block lg:hidden mb-4'>
+                          <a href='#'>
+                            <img src={Logo} alt='' class='h-[27px] w-auto' />
                           </a>
                         </div>
                       </li>
-                      <li className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid active-nav">
+                      <li class='lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent hover:border-coffee border-solid active-nav'>
                         <a
-                          href="#how-it-works"
-                          className="text-sm font-normal text-black/50 hover:text-black/90 lg:text-base xl:text-md lg:text-gray3"
+                          href='#'
+                          class='lg:hover:text-coffee text-base font-medium leading-normal tracking-normal text-center text-white lg:text-darkGreen '
                         >
-                          How it works
+                          Home
                         </a>
                       </li>
-                      <li className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid">
+                      <li class='lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent hover:border-coffee border-solid'>
                         <a
-                          href="#benefits"
-                          className="text-sm font-normal text-black/50 hover:text-black/90 lg:text-base xl:text-md lg:text-gray3 "
+                          href='#howItWorks'
+                          class='lg:hover:text-coffee text-base font-medium leading-normal tracking-normal text-center text-white lg:text-darkGreen '
+                        >
+                          How It Works
+                        </a>
+                      </li>
+                      <li class='lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent hover:border-coffee border-solid'>
+                        <a
+                          href='#benefits'
+                          class='lg:hover:text-coffee text-base font-medium leading-normal tracking-normal text-center text-white lg:text-darkGreen '
                         >
                           Benefits
                         </a>
                       </li>
-                      <li className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid">
+                      <li
+                        id='faq-item'
+                        class='lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent hover:border-coffee border-solid'
+                      >
                         <a
-                          href="#faqs"
-                          className="text-sm font-normal text-black/50 hover:text-black/90 lg:text-base xl:text-md lg:text-gray3 "
+                          href='#faqs'
+                          class='lg:hover:text-coffee text-base font-medium leading-normal tracking-normal text-center text-white lg:text-darkGreen '
                         >
                           FAQs
                         </a>
                       </li>
                       <li
-                        id="faq-item"
-                        className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid"
+                        id='form-item'
+                        class='lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  border-b-2 border-transparent hover:border-coffee border-solid'
                       >
                         <a
-                          href="#faqs"
-                          className="text-sm font-normal text-black/50 hover:text-black/90 lg:text-base xl:text-md lg:text-gray3 "
+                          href='#eligibleProducts'
+                          class='lg:hover:text-coffee text-base font-medium leading-normal tracking-normal text-center text-white lg:text-darkGreen '
                         >
                           Eligible Products
                         </a>
                       </li>
                     </ul>
                   </div>
-                  <div className="flex flex-col items-center justify-end col-span-9 lg:col-span-3 lg:flex-row">
-                    <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  lg:mt-2 border-b-2 border-transparent  border-solid">
-                      <Link
-                        to="/login"
-                        className="text-base font-normal text-black/50 hover:text-black/90 lg:text-sm xl:text-base lg:text-gray3"
-                      >
-                        Log in
-                      </Link>
-                    </div>
-                    <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit lg:mt-1  ">
-                      <Link
-                        to={`${import.meta.env.VITE_MARKETPLACE_URL}/typeform`}
-                        className="flex px-6 py-3 text-sm font-semibold text-white transition-all duration-300 bg-black rounded-full max-w-max font-Inter group hover:pl-4"
-                      >
+                  <div class=' col-span-9 lg:col-span-3 flex flex-col lg:flex-row items-center justify-end '>
+                    <div
+                      class=' text-darkGreen font-medium lg:text-white border-2 mb-4 lg:mb-0
+                     hover:shadow-custom hover:border-2 border-darkGreen rounded-[30px] cursor-pointer
+                      text-center border-solid bg-white lg:bg-darkGreen hover:bg-white lg:hover:text-darkGreen w-32 h-10 flex align-middle justify-center items-center'
+                    >
+                      <a href='#' class='leading-5 text-sm font-medium'>
                         Start Saving
-                        <i className="w-0 transition-all transform scale-0 bi bi-arrow-right group-hover:w-auto group-hover:scale-100 group-hover:ml-3 "></i>
-                      </Link>
+                      </a>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* mobile menu */}
-            <div
-              className={`mb-5 lg:hidden  lg:mb-0 transition-all duration-300   fixed top-0 left-0 right-0 bottom-0 lg:relative pb-5 h-max border-b lg:h-auto w-full   bg-white lg:bg-white flex justify-center items-start ${
-                menu ? "scale-100" : "scale-0"
-              }`}
-            >
-              <div className="grid w-full grid-cols-9 ">
-                <div className="block mb-4 lg:hidden absolute left-[30px] top-[22px]">
-                  <a href="#">
-                    <img src={Logo} alt="" className="h-[45px] w-auto" />
-                  </a>
-                </div>
-                <button
-                  onClick={() => setMenu(false)}
-                  className="lg:hidden block ms-auto absolute top-[30px] right-[30px]"
-                >
-                  <i className="bi bi-x-lg text-[20px] text-black/40"></i>
-                </button>
-                <div className="flex items-center justify-start col-span-9 pt-24 lg:col-span-6 ">
-                  <ul className="flex flex-col items-center justify-center w-full text-start lg:flex-row lg:mt-2 ">
-                    <li className="lg:ms-[20px]  xl:ms-[25px]  mb-3.5 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid active-nav">
-                      <a
-                        href="#how-it-works"
-                        className="text-base font-medium text-black/50 hover:text-black/90 lg:text-base xl:text-lg lg:text-gray3 "
-                      >
-                        How it works
-                      </a>
-                    </li>
 
-                    <li className="lg:ms-[20px]  xl:ms-[25px]  mb-3.5 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid">
-                      <a
-                        href="#benefits"
-                        className="text-base font-medium text-black/50 hover:text-black/90 lg:text-base xl:text-lg lg:text-gray3 "
+                    <div class='lg:ms-[10px]  xl:ms-[15px]  mb-3 lg:mb-0 w-fit '>
+                      <div
+                        class='  font-medium  border-2
+                     hover:shadow-custom  lg:border-darkGreen rounded-[30px] cursor-pointer
+                      text-center border-solid bg-transparent hover:bg-darkGreen lg:hover:text-white text-white lg:text-darkGreen w-32 h-10 flex align-middle justify-center items-center'
                       >
-                        Benefits
-                      </a>
-                    </li>
-                    <li
-                      id="faq-item"
-                      className="lg:ms-[20px]  xl:ms-[25px]  mb-3.5 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid"
-                    >
-                      <a
-                        href="#faqs"
-                        className="text-base font-medium text-black/50 hover:text-black/90 lg:text-base xl:text-lg lg:text-gray3 "
-                      >
-                        FAQs
-                      </a>
-                    </li>
-                    <li
-                      id="form-item"
-                      className="lg:ms-[20px]  xl:ms-[25px]  mb-3.5 lg:mb-0 w-fit  border-b-2 border-transparent  border-solid"
-                    >
-                      <a
-                        href="#form"
-                        className="text-base font-medium text-black/50 hover:text-black/90 lg:text-base xl:text-lg lg:text-gray3 "
-                      >
-                        Eligible Products
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="flex flex-col items-center justify-end col-span-9 mt-5 lg:col-span-3 lg:flex-row">
-                  <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit  lg:mt-2 border-b-2 border-transparent  border-solid">
-                    <Link
-                      to="/login"
-                      className="text-base font-medium text-black/50 hover:text-black/90 lg:text-base xl:text-lg lg:text-gray3 "
-                    >
-                      Log in
-                    </Link>
-                  </div>
-                  <div className="lg:ms-[20px]  xl:ms-[25px]  mb-3 lg:mb-0 w-fit lg:mt-1  mt-2 ">
-                    <Link
-                      to={`${import.meta.env.VITE_MARKETPLACE_URL}/typeform`}
-                      className="sign-in text-[14px] lg:text-[14px] xl:text-base text-white font-medium lg:text-white border-2 hover:shadow-custom hover:border-2 border-black rounded-[30px]  px-4 py-2 border-solid bg-black lg:bg-black hover:bg-white lg:hover:text-black"
-                    >
-                      Start Saving
-                    </Link>
+                        <a href='#' class='leading-5 text-sm font-medium'>
+                          Log In
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
