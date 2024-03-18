@@ -1,7 +1,7 @@
 import React from "react";
 import { Accordion } from "flowbite-react";
 
-const Faqs = () => {
+const FaqSection = () => {
   return (
     <section
       id="faqs"
@@ -160,4 +160,4 @@ const Faqs = () => {
   );
 };
 
-export default Faqs;
+export default FaqSection;
