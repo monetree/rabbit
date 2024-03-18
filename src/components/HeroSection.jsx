@@ -27,7 +27,7 @@ const HeroSection = () => {
         text-center border-solid   text-darkGreen   h-12 flex align-middle justify-center items-center w-56 hover:bg-darkGreen hover:text-white"
             >
               <Link
-                to={`${VITE_MARKETPLACE_URL}`}
+                to={`${VITE_MARKETPLACE_URL}/survey`}
                 class="leading-5 text-base font-semibold"
               >
                 Start Saving

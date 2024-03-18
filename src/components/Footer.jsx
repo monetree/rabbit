@@ -52,7 +52,7 @@ const Footer = () => {
                 </h3>
                 <div class="mb-3">
                   <Link
-                    to={`${VITE_MARKETPLACE_URL}`}
+                    to={`${VITE_MARKETPLACE_URL}/survey`}
                     class=" text-beige hover:text-coffee text-basis "
                   >
                     Start Sav

@@ -113,7 +113,7 @@ const Header = () => {
 
                     <div class="lg:ms-[10px]  xl:ms-[15px]  mb-3 lg:mb-0 w-fit ">
                       <Link
-                        to={`${VITE_MARKETPLACE_URL}`}
+                        to={`${VITE_MARKETPLACE_URL}/login`}
                         class="font-medium  border-2
                      hover:shadow-custom  lg:border-darkGreen rounded-[30px] cursor-pointer
                       text-center border-solid bg-transparent hover:bg-darkGreen lg:hover:text-white text-white lg:text-darkGreen w-32 h-10 flex align-middle justify-center items-center"
