@@ -1,14 +1,14 @@
 import HeroSection from "./components/HeroSection";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import HowItWorks from "./components/HowItWorks";
 import OurPartners from "./components/OurPartners";
 import WhatOurCustomerSays from "./components/WhatOurCustomerSays";
-import Benefits from "./components/Benefits";
-import Pricing from "./components/Pricing";
-import ExploreByCat from "./components/ExploreByCat";
-import Faqs from "./components/Faqs";
-import Cta from "./components/Cta";
-import Footer from "./components/Footer";
+// import Benefits from "./components/Benefits";
+// import Pricing from "./components/Pricing";
+// import ExploreByCat from "./components/ExploreByCat";
+// import Faqs from "./components/Faqs";
+// import Cta from "./components/Cta";
+// import Footer from "./components/Footer";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
