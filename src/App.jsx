@@ -1,5 +1,5 @@
 import HeroSection from "./components/HeroSection";
-// import Header from "./components/Header";
+import Header from "./components/Header";
 import HowItWorks from "./components/HowItWorks";
 import OurPartners from "./components/OurPartners";
 import WhatOurCustomerSays from "./components/WhatOurCustomerSays";
@@ -14,7 +14,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 function App() {
   return (
     <div className="pt-16 lg:pt-20">
-      {/* <Header /> */}
+      <Header />
       <HeroSection />
       <OurPartners />
       <HowItWorks />
