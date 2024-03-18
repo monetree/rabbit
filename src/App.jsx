@@ -6,7 +6,7 @@ import WhatOurCustomerSays from "./components/WhatOurCustomerSays";
 import Benefits from "./components/Benefits";
 import Pricing from "./components/Pricing";
 import ExploreByCat from "./components/ExploreByCat";
-// import Faqs from "./components/Faqs";
+import Faqs from "./components/Faqs";
 import Cta from "./components/Cta";
 import Footer from "./components/Footer";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -23,7 +23,7 @@ function App() {
       <Benefits />
       <Pricing />
       <ExploreByCat />
-      {/* <Faqs /> */}
+      <Faqs />
       <Cta />
       <Footer />
     </div>
