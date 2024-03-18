@@ -7,7 +7,7 @@ import Benefits from "./components/Benefits";
 import Pricing from "./components/Pricing";
 import ExploreByCat from "./components/ExploreByCat";
 // import Faqs from "./components/Faqs";
-// import Cta from "./components/Cta";
+import Cta from "./components/Cta";
 import Footer from "./components/Footer";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
@@ -24,7 +24,7 @@ function App() {
       <Pricing />
       <ExploreByCat />
       {/* <Faqs /> */}
-      {/* <Cta /> */}
+      <Cta />
       <Footer />
     </div>
   );
