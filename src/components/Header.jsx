@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../assets/images/header/Logo.png";
+import { Link } from "react-router-dom";
+import { VITE_MARKETPLACE_URL } from "../utils/Constants";
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
@@ -14,9 +16,9 @@ const Header = () => {
             <div class="col-span-12 lg:col-span-3 ">
               <div class="flex justify-between items-center h-full mt-1">
                 <div class="logo-div">
-                  <a href="#">
+                  <Link to="/">
                     <img src={Logo} alt="" class=" h-6" />
-                  </a>
+                  </Link>
                 </div>
 
                 <div
@@ -100,26 +102,24 @@ const Header = () => {
                     </ul>
                   </div>
                   <div class=" col-span-9 lg:col-span-3 flex flex-col lg:flex-row items-center justify-end ">
-                    <div
+                    <Link
+                      to={`${VITE_MARKETPLACE_URL}/survey`}
                       class=" text-darkGreen font-medium lg:text-white border-2 mb-4 lg:mb-0
                      hover:shadow-custom hover:border-2 border-darkGreen rounded-[30px] cursor-pointer
                       text-center border-solid bg-white lg:bg-darkGreen hover:bg-white lg:hover:text-darkGreen w-32 h-10 flex align-middle justify-center items-center"
                     >
-                      <a href="#" class="leading-5 text-sm font-medium">
-                        Start Saving
-                      </a>
-                    </div>
+                      <a class="leading-5 text-sm font-medium">Start Saving</a>
+                    </Link>
 
                     <div class="lg:ms-[10px]  xl:ms-[15px]  mb-3 lg:mb-0 w-fit ">
-                      <div
-                        class="  font-medium  border-2
+                      <Link
+                        to={`${VITE_MARKETPLACE_URL}`}
+                        class="font-medium  border-2
                      hover:shadow-custom  lg:border-darkGreen rounded-[30px] cursor-pointer
                       text-center border-solid bg-transparent hover:bg-darkGreen lg:hover:text-white text-white lg:text-darkGreen w-32 h-10 flex align-middle justify-center items-center"
                       >
-                        <a href="#" class="leading-5 text-sm font-medium">
-                          Log In
-                        </a>
-                      </div>
+                        <a class="leading-5 text-sm font-medium">Log In</a>
+                      </Link>
                     </div>
                   </div>
                 </div>
