@@ -30,11 +30,11 @@
 
 body {
   /* font-family: "Roboto", sans-serif; */
-  font-family: 'Epilogue', sans-serif;
+  font-family: "Epilogue", sans-serif;
 }
 
 .roboto {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .slick-track {
@@ -88,7 +88,7 @@ body {
 
 .carousel__slide div:before {
   display: block;
-  content: '';
+  content: "";
   padding-top: 100%;
 }
 
