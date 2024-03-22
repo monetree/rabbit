@@ -1,32 +1,28 @@
-import HeroSection from "./components/HeroSection";
-import Header from "./components/Header";
-import HowItWorks from "./components/HowItWorks";
-import OurPartners from "./components/OurPartners";
-import WhatOurCustomerSays from "./components/WhatOurCustomerSays";
-import Benefits from "./components/Benefits";
-import Pricing from "./components/Pricing";
-import ExploreByCat from "./components/ExploreByCat";
-import FaqSection from "./components/FaqSection";
-import Cta from "./components/Cta";
-import Footer from "./components/Footer";
-import "bootstrap-icons/font/bootstrap-icons.css";
+import './App.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import Home from './components/Home';
+import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
+import Aboutus from './components/aboutus/Aboutus';
+import Blog from './components/blog/Blog';
+import Article from './components/article/Article';
+import PrivacyPolicy from './components/privacy/PrivacyPolicy';
+import TermsAndConditions from './components/terms/TermsAndConditions';
+import Support from './components/support/Support';
 
 function App() {
   return (
-    <div className="pt-16 lg:pt-20">
-      <Header />
-      <HeroSection />
-      <OurPartners />
-      <HowItWorks />
-      <WhatOurCustomerSays />
-
-      <Benefits />
-      <Pricing />
-      <ExploreByCat />
-      <FaqSection />
-      <Cta />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/aboutus" element={<Aboutus />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/article" element={<Article />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="/support" element={<Support/>} />
+        
+      </Routes>
+    </BrowserRouter>
   );
 }
 

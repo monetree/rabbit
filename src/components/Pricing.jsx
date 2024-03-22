@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { VITE_MARKETPLACE_URL } from "../utils/Constants";
 
 const Pricing = () => {
   return (
@@ -10,17 +8,16 @@ const Pricing = () => {
     >
       <div className="container mx-auto">
         <div className="text-center">
-          <p className="text-base font-semibold leading-5 tracking-normal text-center uppercase font-lato text-coffee ">
+          <p className="text-sm font-medium leading-5 tracking-normal text-center uppercase font-lato text-coffee ">
             pricing
           </p>
 
           <h1 className="mt-4 text-3xl font-semibold tracking-normal text-center capitalize font-epilogue lg:text-4xl leading-13">
-            Choose You Tariff And Start Right Now
+            Choose the savings plan that is perfect for you{" "}
           </h1>
 
-          <p className="mt-4 text-base font-medium leading-7 tracking-normal text-center text-gray-600 font-epilogue">
-            We accept HSA payments, so don’t waste your time - join our
-            platform!
+          <p className="mt-4 text-sm font-medium leading-7 tracking-normal text-center text-selfGray font-epilogue">
+            Of course, we accept HSA payments!
           </p>
         </div>
 
@@ -35,11 +32,11 @@ const Pricing = () => {
                     Saver
                   </h1>
                   <div className="text-center">
-                    <span className="text-4xl font-semibold lg:text-5xl text-darkGreen ">
-                      $30
+                    <span className="text-4xl font-medium lg:text-5xl text-darkGreen ">
+                      $35
                     </span>
                     <div>
-                      <span className="text-sm text-gray-600 ">
+                      <span className="text-sm text-selfGray ">
                         Per Product
                       </span>
                     </div>
@@ -48,29 +45,29 @@ const Pricing = () => {
                 <ul>
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium md:text-base text-selfGray">
+                    <span className="text-sm font-medium md:text-sm text-selfGray">
+                      Average savings = $180 annually
+                    </span>
+                  </li>
+
+                  <li className="flex items-start mb-2">
+                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <span className="text-sm font-medium md:text-sm text-selfGray">
                       Save on one wellness product
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium md:text-base text-selfGray">
+                    <span className="text-sm font-medium md:text-sm text-selfGray">
                       Access to one LMN
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium md:text-base text-selfGray">
-                      Average savings of $180 annually
-                    </span>
-                  </li>
-
-                  <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium md:text-base text-selfGray">
-                      Reimbursement support
+                    <span className="text-sm font-medium md:text-sm text-selfGray">
+                      HSA/FSA & IRS compliance dashboard
                     </span>
                   </li>
                 </ul>
@@ -78,12 +75,9 @@ const Pricing = () => {
                   className="absolute bottom-5 lg:bottom-7 left-7 right-7   border-2 mt-auto hover:shadow-custom  border-darkGreen rounded-[30px] cursor-pointer
                  text-center border-solid  hover:bg-darkGreen hover:text-white  text-darkGreen   h-12 flex align-middle justify-center items-center"
                 >
-                  <Link
-                    to={`${VITE_MARKETPLACE_URL}/survey`}
-                    className="text-base font-semibold leading-5"
-                  >
+                  <a href="" className="text-sm font-medium leading-5">
                     Start Saving
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -98,7 +92,7 @@ const Pricing = () => {
                     Saver
                   </h1>
                   <div className="text-center">
-                    <span className="text-4xl font-semibold text-white lg:text-5xl ">
+                    <span className="text-4xl font-medium text-white lg:text-5xl ">
                       $99
                     </span>
                     <div>
@@ -109,50 +103,50 @@ const Pricing = () => {
                 <ul>
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium text-white md:text-base">
-                      Save on one wellness product
+                    <span className="text-sm font-medium text-white md:text-sm">
+                      Average savings = $395 annually
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium text-white md:text-base">
+                    <span className="text-sm font-medium text-white md:text-sm">
+                      Save on many wellness product
+                    </span>
+                  </li>
+
+                  <li className="flex items-start mb-2">
+                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <span className="text-sm font-medium text-white md:text-sm">
                       Access to all eligible LMNs
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium text-white md:text-base">
+                    <span className="text-sm font-medium text-white md:text-sm">
                       12 months of access
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium text-white md:text-base">
-                      Average savings of $395 annually
+                    <span className="text-sm font-medium text-white md:text-sm">
+                      HSA/FSA & IRS compliance dashboard
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium text-white md:text-base">
-                      Reimbursement support
+                    <span className="text-sm font-medium text-white md:text-sm">
+                      Early access to new advanced HSA savings products
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium text-white md:text-base">
-                      Early access to new savings products
-                    </span>
-                  </li>
-
-                  <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium text-white md:text-base">
-                      Exclusive partner discounts
+                    <span className="text-sm font-medium text-white md:text-sm">
+                      Personalized LMNs (e.g. your local gym) upon request
                     </span>
                   </li>
                 </ul>
@@ -160,12 +154,9 @@ const Pricing = () => {
                   className="absolute bottom-5 lg:bottom-7 left-7 right-7 bg-darkGreen/80  border-2 mt-auto hover:shadow-custom  border-darkGreen rounded-[30px] cursor-pointer
               text-center border-solid   text-white   h-12 flex align-middle justify-center items-center"
                 >
-                  <Link
-                    to={`${VITE_MARKETPLACE_URL}/survey`}
-                    className="text-base font-medium leading-5"
-                  >
+                  <a href="" className="text-sm font-medium leading-5">
                     Start Saving
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -177,59 +168,53 @@ const Pricing = () => {
                     Saver
                   </h1>
                   <div className="text-center">
-                    <span className="text-4xl font-semibold lg:text-5xl text-darkGreen ">
-                      $79
+                    <span className="text-4xl font-medium lg:text-5xl text-darkGreen ">
+                      $89
                     </span>
                     <div>
-                      <span className="text-sm text-gray-600 ">annually</span>
+                      <span className="text-sm text-selfGray ">annually</span>
                     </div>
                   </div>
                 </div>
                 <ul>
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium md:text-base text-selfGray">
-                      Save on one wellness product
+                    <span className="text-sm font-medium md:text-sm text-selfGray">
+                      Average savings = $295 annually
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium md:text-base text-selfGray">
+                    <span className="text-sm font-medium md:text-sm text-selfGray">
+                      Save on three wellness product
+                    </span>
+                  </li>
+
+                  <li className="flex items-start mb-2">
+                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <span className="text-sm font-medium md:text-sm text-selfGray">
                       Access to three LMNs
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium md:text-base text-selfGray">
+                    <span className="text-sm font-medium md:text-sm text-selfGray">
                       12 months of access
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium md:text-base text-selfGray">
-                      Reimbursement support
-                    </span>
-                  </li>
-
-                  <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium md:text-base text-selfGray">
-                      Average savings of $265 annually
+                    <span className="text-sm font-medium md:text-sm text-selfGray">
+                      HSA/FSA & IRS compliance dashboard
                     </span>
                   </li>
                   <li className="flex items-start mb-2">
                     <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium md:text-base text-selfGray">
-                      Reimbursement support
-                    </span>
-                  </li>
-                  <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
-                    <span className="text-sm font-medium md:text-base text-selfGray">
-                      Access to new savings products
+                    <span className="text-sm font-medium md:text-sm text-selfGray">
+                      Access to new advanced HSA savings products
                     </span>
                   </li>
                 </ul>
@@ -238,12 +223,9 @@ const Pricing = () => {
                   className="absolute bottom-5 lg:bottom-7 left-7 right-7   border-2 mt-auto hover:shadow-custom  border-darkGreen rounded-[30px] cursor-pointer
                  text-center border-solid  hover:bg-darkGreen hover:text-white  text-darkGreen   h-12 flex align-middle justify-center items-center"
                 >
-                  <Link
-                    to={`${VITE_MARKETPLACE_URL}/survey`}
-                    className="text-base font-semibold leading-5"
-                  >
+                  <a href="" className="text-sm font-medium leading-5">
                     Start Saving
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

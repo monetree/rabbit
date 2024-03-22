@@ -13,7 +13,11 @@ export default {
         beige: '#E3DDD1',
         darkGreen: '#02382A',
         lightBeige: '#F7F5F2',
+        dark:'#100C0D',
       },
+      fontSize:{
+        'xxs':'10px'
+      }
     },
   },
   plugins: [require('flowbite/plugin')],
