@@ -32,9 +32,9 @@ const OurPartners = () => {
               Our partner Brands
             </p>
 
-            <h1 className="mt-4 text-3xl font-semibold tracking-normal text-center capitalize font-epilogue lg:text-4xl leading-13">
+            <h1 className="mt-4 text-3xl font-semibold tracking-normal text-center leading-13">
               Our members save an average of
-              <span className="text-coffee">$325 annually</span> <br />
+              <span className="text-coffee"> $325 annually</span> <br />
               from our partner brands
             </h1>
             <div

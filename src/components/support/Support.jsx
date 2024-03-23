@@ -1,22 +1,22 @@
-import React from 'react';
-import Header from '../aboutus/Header';
-import MainBlock from './MainBlock';
-import LowerMainBlock from '../aboutus/LowerMainBlock';
-import Footer from '../aboutus/Footer';
-import Faqs from '../Faqs'
-import Form from './Form';
+import React from "react";
+import Header from "../Header";
+import MainBlock from "./MainBlock";
+import Footer from "../Footer";
+import Faqs from "../Faqs";
+import Form from "./Form";
+import Cta from "../Cta";
 
-const Support=()=>{
-    return (
-        <div className='bg-stone-100'>
-        <Header/>
-        <MainBlock/>
-        <Faqs/>
-        <Form/>
-        <LowerMainBlock/>
-        <Footer/>
+const Support = () => {
+  return (
+    <div className="bg-stone-100">
+      <Header />
+      <MainBlock />
+      <Faqs />
+      <Form />
+      <Cta />
+      <Footer />
     </div>
-    );
-}
+  );
+};
 
 export default Support;

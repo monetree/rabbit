@@ -3,13 +3,13 @@ import HeroSection from "./HeroSection";
 import Header from "./Header";
 import HowItWorks from "./HowItWorks";
 import OurPartners from "./OurPartners";
-import WhatOurCustomerSays from "./WhatOurCustomerSays";
 import Benefits from "./Benefits";
 import Pricing from "./Pricing";
 import ExploreByCat from "./ExploreByCat";
 import Faqs from "./Faqs";
 import Cta from "./Cta";
 import Footer from "./Footer";
+import Reviews from "./Reviews";
 
 const Home = () => {
   return (
@@ -18,7 +18,7 @@ const Home = () => {
       <HeroSection />
       <OurPartners />
       <HowItWorks />
-      <WhatOurCustomerSays />
+      <Reviews />
 
       <Benefits />
       <Pricing />

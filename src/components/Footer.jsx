@@ -6,54 +6,84 @@ import IconLocation from "../assets/images/location.svg";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <footer class="px-4 xl:px-4  bg-cover bg-bottom  pt-10 pb-6 bg-darkGreen">
-      <div class="container mx-auto">
-        <div class="grid grid-cols-12">
-          <div class="col-span-12 lg:col-span-3 x-auto flex justify-center lg:justify-start mb-7 lg:mb-0">
-            <img src={Logo} alt="" class="h-7 " />
+    <footer className="px-4 xl:px-4  bg-cover bg-bottom  pt-10 pb-6 bg-darkGreen">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-12">
+          <div className="col-span-12 lg:col-span-3 x-auto flex justify-center lg:justify-start mb-7 lg:mb-0">
+            <img src={Logo} alt="" className="h-7 " />
           </div>
-          <div class="col-span-12 lg:col-span-9 ">
-            <div class="grid grid-cols-12 ">
-              <div class="col-span-12 md:col-span-4 lg:col-span-3 mx-auto md:text-start  text-center mb-5 md:mb-0 ">
-                <h3 class="text-beige text-lg font-semibold mb-4">Home</h3>
-                <div class="mb-3">
-                  <a href="" class=" text-beige hover:text-coffee text-basis ">
-                    <Link to="/">How it works</Link>
+          <div className="col-span-12 lg:col-span-9 ">
+            <div className="grid grid-cols-12 ">
+              <div className="col-span-12 md:col-span-4 lg:col-span-3 mx-auto md:text-start  text-center mb-5 md:mb-0 ">
+                <h3 className="text-beige text-lg font-semibold mb-4 cursor-pointer">
+                  <a
+                    onClick={() => {
+                      window.scrollTo({
+                        top: 0,
+                        behavior: "smooth", // For a smooth scroll
+                      });
+                    }}
+                  >
+                    Home
+                  </a>
+                </h3>
+                <div className="mb-3">
+                  <a
+                    href="#howItWorks"
+                    className=" text-beige hover:text-coffee text-sm"
+                  >
+                    How it works
                   </a>
                 </div>
-                <div class="mb-3">
-                  <a href="" class=" text-beige hover:text-coffee text-basis ">
-                    <Link to="/aboutus">Benefits</Link>
+                <div className="mb-3">
+                  <a
+                    href="#benefits"
+                    className=" text-beige hover:text-coffee text-sm"
+                  >
+                    Benefits
                   </a>
                 </div>
-                <div class="mb-3">
-                  <a href="" class=" text-beige hover:text-coffee text-basis ">
+                <div className="mb-3">
+                  <a
+                    href="#faqs"
+                    className=" text-beige hover:text-coffee text-sm"
+                  >
                     FAQs
                   </a>
                 </div>
-                <div class="mb-3">
-                  <a href="" class=" text-beige hover:text-coffee text-basis ">
+                <div className="mb-3">
+                  <a
+                    href="#eligibleProducts"
+                    className=" text-beige hover:text-coffee text-sm"
+                  >
                     Eligible Products
                   </a>
                 </div>
               </div>
-              <div class="col-span-12 md:col-span-4 lg:col-span-3 mx-auto md:text-start  text-center mb-5 md:mb-0">
-                <h3 class="text-beige text-lg font-semibold mb-4">About Us</h3>
-                <div class="mb-3">
-                  <a href="" class=" text-beige hover:text-coffee text-basis ">
+              <div className="col-span-12 md:col-span-4 lg:col-span-3 mx-auto md:text-start  text-center mb-5 md:mb-0">
+                <h3 className="text-beige text-lg font-semibold mb-4">
+                  <Link to="/about-us"> About Us</Link>
+                </h3>
+                <div className="mb-3">
+                  <Link
+                    to="/blog"
+                    className=" text-beige hover:text-coffee text-sm"
+                  >
                     Blog
-                  </a>
+                  </Link>
                 </div>
               </div>
-              <div class="col-span-12 md:col-span-4 lg:col-span-6 mx-auto md:text-start  text-center mb-5 md:mb-0">
-                <div class="mx-auto md:ml-auto  w-fit">
-                  <h3 class="text-beige text-lg font-semibold mb-4">Contact</h3>
+              <div className="col-span-12 md:col-span-4 lg:col-span-6 mx-auto md:text-start  text-center mb-5 md:mb-0">
+                <div className="mx-auto md:ml-auto  w-fit">
+                  <h3 className="text-beige text-lg font-semibold mb-4">
+                    Contact
+                  </h3>
 
-                  <div class="mb-2 flex items-start justify-center md:justify-start">
-                    <img src={IconEmail} alt="" class="mr-3" />{" "}
+                  <div className="mb-2 flex items-start justify-center md:justify-start">
+                    <img src={IconEmail} alt="" className="mr-3" />{" "}
                     <a
                       href="mailto:info@ourservice.com"
-                      class=" text-beige hover:text-coffee text-basis "
+                      className=" text-beige hover:text-coffee text-sm"
                     >
                       info@crateshealth.com
                     </a>
@@ -63,8 +93,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr class="mt-5 h-[0.5px] bg-white" />
-        <p class="text-basis text-sm text-white text-center mt-6 font-normal">
+        <hr className="mt-5 h-[0.5px] bg-white" />
+        <p className="text-xs text-beige text-center mt-6 font-normal">
           © 2024 Crates Health. All rights reserved.
         </p>
       </div>

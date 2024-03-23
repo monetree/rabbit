@@ -16,7 +16,7 @@ const Benefits = () => {
             benefits
           </p>
 
-          <h1 className="mt-4 text-3xl font-semibold tracking-normal text-center text-white capitalize font-epilogue lg:text-4xl leading-13">
+          <h1 className="mt-4 text-3xl font-semibold tracking-normal text-center text-white font-epilogue lg:text-4xl leading-13">
             More health, more convenience, less cost
           </h1>
 
@@ -37,7 +37,7 @@ const Benefits = () => {
             >
               <div className="lg:w-[40%]">
                 <h2 className="text-xl font-medium text-white">Save money</h2>
-                <p className="mt-4 text-base font-normal text-white">
+                <p className="mt-4 text-sm font-normal text-white">
                   We partner with the leading wellness companies to make it
                   simple for you save 30% on their products by using your HSA or
                   FSA dollars
@@ -60,7 +60,7 @@ const Benefits = () => {
                 <br />
                 convenience
               </h2>
-              <p className="text-base font-normal text-gray-600">
+              <p className="text-sm font-normal text-selfGray">
                 Use your personal card to avoid the annoying HSA card declines
                 and we will automate reimbursement for you.
               </p>
@@ -74,7 +74,7 @@ const Benefits = () => {
               <h2 className="pb-0 mt-6 mb-5 text-xl font-semibold text-black">
                 Vetted wellness products
               </h2>
-              <p className="text-base font-normal text-gray-600">
+              <p className="text-sm font-normal text-selfGray">
                 Our medical team is constantly evaluating new brands/products to
                 give you access to the most trusted and effective products
               </p>
@@ -90,7 +90,7 @@ const Benefits = () => {
             >
               <div className="lg:w-[50%]">
                 <h2 className="text-xl font-medium text-white">Save time</h2>
-                <p className="mt-4 text-base font-normal text-white">
+                <p className="mt-4 text-sm font-normal text-white">
                   We offer a short online health survey and use AI to support
                   our medical team’s review of your profile so we can instantly
                   issue you a Letter of Medical Necessity
