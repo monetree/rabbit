@@ -1,17 +1,26 @@
 import React from "react";
-import Logo from "../assets/images/Logo 1.png";
-import IconCall from "../assets/images/call.svg";
 import IconEmail from "../assets/images/email.svg";
-import IconLocation from "../assets/images/location.svg";
 import { Link } from "react-router-dom";
+import LogoWhite from "../assets/logo-white.svg";
+import CratesWhite from "../assets/crates-white.png";
+
 const Footer = () => {
   return (
     <footer className="px-4 xl:px-4  bg-cover bg-bottom  pt-10 pb-6 bg-darkGreen">
       <div className="container mx-auto">
         <div className="grid grid-cols-12">
-          <div className="col-span-12 lg:col-span-3 x-auto flex justify-center lg:justify-start mb-7 lg:mb-0">
-            <img src={Logo} alt="" className="h-7 " />
+          <div className="col-span-12 lg:col-span-3">
+            <div className="text-bgGrey text-xl">
+              <p className="text-center">
+                <img src={LogoWhite} alt="" className="w-16 ml-12" />
+              </p>
+
+              <div>
+                <img src={CratesWhite} className="w-40 mt-4" />
+              </div>
+            </div>
           </div>
+
           <div className="col-span-12 lg:col-span-9 ">
             <div className="grid grid-cols-12 ">
               <div className="col-span-12 md:col-span-4 lg:col-span-3 mx-auto md:text-start  text-center mb-5 md:mb-0 ">

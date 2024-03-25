@@ -13,7 +13,7 @@ import Reviews from "./Reviews";
 
 const Home = () => {
   return (
-    <div className="pt-16 lg:pt-20">
+    <div>
       <Header />
       <HeroSection />
       <OurPartners />

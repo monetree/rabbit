@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Logo from "../assets/images/Logo.png";
 import { Link } from "react-router-dom";
 import { VITE_MARKETPLACE_URL } from "../utils/Constants";
+import Logo from "../assets/Logo.svg";
+import Crates from "../assets/Crates.svg";
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
@@ -15,9 +16,12 @@ const Header = () => {
           <div className="grid grid-cols-12 h-16 lg:h-20">
             <div className="col-span-12 lg:col-span-3 ">
               <div className="flex justify-between items-center h-full mt-1">
-                <div className="logo-div">
+                <div className="flex justify-between items-center w-7/12 max-md:w-full">
                   <Link to="/">
-                    <img src={Logo} alt="" className=" h-6" />
+                    <div className="flex">
+                      <img src={Logo} alt="" />
+                      <img src={Crates} alt="" className="ml-2" />
+                    </div>
                   </Link>
                 </div>
 
