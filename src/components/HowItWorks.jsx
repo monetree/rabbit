@@ -155,6 +155,7 @@ const HowItWorks = () => {
               </div>
             </div>
           </div>
+
           <div className="h-full">
             <div className="px-3 h-full">
               <div className="rounded-2xl bg-white p-7  h-full">

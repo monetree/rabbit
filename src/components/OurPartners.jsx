@@ -4,23 +4,23 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 // Default theme
 import "@splidejs/react-splide/css";
 
-import One from "../assets/images/brands/one.png";
-import Two from "../assets/images/brands/two.png";
-import Three from "../assets/images/brands/three.png";
-import Four from "../assets/images/brands/four.png";
-import Five from "../assets/images/brands/five.png";
-import Six from "../assets/images/brands/six.png";
-import Seven from "../assets/images/brands/seven.png";
-import Eight from "../assets/images/brands/eight.png";
-import Nine from "../assets/images/brands/nine.png";
-import Ten from "../assets/images/brands/ten.png";
-import Eleven from "../assets/images/brands/eleven.png";
-import Twelve from "../assets/images/brands/twelve.png";
-import Thirteen from "../assets/images/brands/thirteen.png";
-import Fourteen from "../assets/images/brands/fourteen.png";
-import Fifteen from "../assets/images/brands/fifteen.png";
-import Sixteen from "../assets/images/brands/sixteen.png";
-import Seventeen from "../assets/images/brands/seventeen.png";
+import One from "../assets/images/brands/1.svg";
+import Two from "../assets/images/brands/2.svg";
+import Three from "../assets/images/brands/3.svg";
+import Four from "../assets/images/brands/4.svg";
+import Five from "../assets/images/brands/5.svg";
+import Six from "../assets/images/brands/6.svg";
+import Seven from "../assets/images/brands/7.svg";
+import Eight from "../assets/images/brands/8.svg";
+import Nine from "../assets/images/brands/9.svg";
+import Ten from "../assets/images/brands/10.svg";
+import Eleven from "../assets/images/brands/11.svg";
+import Twelve from "../assets/images/brands/18.svg";
+import Thirteen from "../assets/images/brands/13.svg";
+import Fourteen from "../assets/images/brands/14.svg";
+import Fifteen from "../assets/images/brands/15.svg";
+import Sixteen from "../assets/images/brands/16.svg";
+import Seventeen from "../assets/images/brands/17.svg";
 
 const OurPartners = () => {
   return (
