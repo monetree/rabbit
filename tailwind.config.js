@@ -14,6 +14,7 @@ export default {
         darkGreen: "#02382A",
         lightBeige: "#F7F5F2",
         dark: "#100C0D",
+        pitch: "rgba(227, 221, 209, 0.30)",
       },
       fontSize: {
         xxs: "10px",

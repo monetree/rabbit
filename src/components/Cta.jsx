@@ -19,7 +19,7 @@ const Cta = () => {
           </h1>
 
           <p class="font-epilogue text-base font-medium leading-7 tracking-normal text-center text-beige mt-6">
-            Take our 1 minute health survey
+            Take our short health survey
           </p>
 
           <div class="flex justify-center mt-6">

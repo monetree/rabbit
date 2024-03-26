@@ -4,7 +4,7 @@ const Faqs = () => {
   return (
     <section
       id="faqs"
-      class="px-4 xl:px-4  bg-cover bg-bottom  pb-14 pt-12 bg-beige"
+      class="px-4 xl:px-4  bg-cover bg-bottom  pb-14 pt-12 bg-pitch"
     >
       <div class="container mx-auto">
         <div class="mx-auto ">
