@@ -2,6 +2,9 @@ import React from "react";
 import { VITE_MARKETPLACE_URL } from "../utils/Constants";
 import { Link } from "react-router-dom";
 
+import PriceGreenTick from "../assets/images/price-tick-green.svg";
+import PriceCoralTick from "../assets/images/price-tick-coral.svg";
+
 const Pricing = () => {
   return (
     <section
@@ -46,28 +49,28 @@ const Pricing = () => {
                 </div>
                 <ul>
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-semibold md:text-sm text-selfGray">
                       Average savings = $180 annually
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium md:text-sm text-selfGray">
                       Save on one wellness product
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium md:text-sm text-selfGray">
                       Access to one LMN
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium md:text-sm text-selfGray">
                       HSA/FSA & IRS compliance dashboard
                     </span>
@@ -110,49 +113,49 @@ const Pricing = () => {
                 </div>
                 <ul>
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-coffee bg-white rounded-full flex"></i>
+                    <img src={PriceCoralTick} className="w-4 mr-2" />
                     <span className="text-sm font-semibold text-white md:text-sm">
                       Average savings = $395 annually
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-coffee bg-white rounded-full flex"></i>
+                    <img src={PriceCoralTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium text-white md:text-sm">
                       Save on many wellness product
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-coffee bg-white rounded-full flex"></i>
+                    <img src={PriceCoralTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium text-white md:text-sm">
                       Access to all eligible LMNs
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-coffee bg-white rounded-full flex"></i>
+                    <img src={PriceCoralTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium text-white md:text-sm">
                       12 months of access
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-coffee bg-white rounded-full flex"></i>
+                    <img src={PriceCoralTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium text-white md:text-sm">
                       HSA/FSA & IRS compliance dashboard
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-coffee bg-white rounded-full flex"></i>
+                    <img src={PriceCoralTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium text-white md:text-sm">
                       Early access to new advanced HSA savings products
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-coffee bg-white rounded-full flex"></i>
+                    <img src={PriceCoralTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium text-white md:text-sm">
                       Customized LMNs (e.g. your local gym) upon request
                     </span>
@@ -189,41 +192,41 @@ const Pricing = () => {
                 </div>
                 <ul>
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-semibold md:text-sm text-selfGray">
                       Average savings = $295 annually
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium md:text-sm text-selfGray">
                       Save on three wellness product
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium md:text-sm text-selfGray">
                       Access to three LMNs
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium md:text-sm text-selfGray">
                       12 months of access
                     </span>
                   </li>
 
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium md:text-sm text-selfGray">
                       HSA/FSA & IRS compliance dashboard
                     </span>
                   </li>
                   <li className="flex items-start mb-2">
-                    <i className="mr-2 bi bi-check-circle-fill text-darkGreen "></i>
+                    <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium md:text-sm text-selfGray">
                       Access to new advanced HSA savings products
                     </span>
