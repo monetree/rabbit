@@ -220,3 +220,21 @@ html {
     align-items: center !important;
   }
 }
+
+@media (min-width: 700px) {
+  .home-slider .slick-slide {
+    transform: scale(0.95);
+    font-size: 14px;
+  }
+  .slick-track{
+    margin-top: 30px;
+  }
+  .home-slider .slick-current, .home-slider .slick-current + .slick-slide{
+    padding-bottom: 2rem;
+    font-size: 16px;
+    transform: scale(1.05);
+  }
+  .home-slider .slick-current{
+    margin-right: 10px;
+  }
+}

@@ -11,7 +11,7 @@ const Benefits = () => {
       className="px-4 pt-12 bg-bottom bg-cover xl:px-4 pb-14 bg-darkGreen"
     >
       <div className="container mx-auto">
-        <div className="text-center md:w-[70%] mx-auto">
+        <div className="text-center  mx-auto">
           <p className="text-sm leading-5 tracking-normal text-center uppercase text-beige font-lato ">
             benefits
           </p>
@@ -20,7 +20,7 @@ const Benefits = () => {
             More health, more convenience, less cost
           </h1>
 
-          <p className="mt-4 text-base font-medium leading-7 tracking-normal text-center text-beige font-epilogue">
+          <p className="mt-4 text-sm font-medium leading-7 tracking-normal text-center text-beige font-epilogue">
             Our mission is to make you healthier and wealthier by making it
             quick and simple to use your HSA or FSA dollars on wellness products
           </p>
