@@ -70,17 +70,17 @@ const Reviews = () => {
             >
               <ReviewMsg
                 text={
-                  "The $79 annual subscription was an absolute no-brainer for me! I spend  $300+ per month on my health practice. Many of those expenses qualify  for HSA dollars through Crates, saving me $100+ monthly."
+                  "The $79 annual subscription was an absolute no-brainer for me! I spend $300+ per month on my health practice. Many of those expenses qualify for HSA dollars through Crates, saving me $100+ monthly. "
                 }
               />
               <ReviewMsg
                 text={
-                  "The $79 annual subscription was an absolute no-brainer for me! I spend  $300+ per month on my health practice. Many of those expenses qualify  for HSA dollars through Crates, saving me $100+ monthly."
+                  "I am so much healthier now! Many of the cool products that I was interested in trying but thought were too expensive are now  much more affordable thanks to Crates Health"
                 }
               />
               <ReviewMsg
                 text={
-                  "The $79 annual subscription was an absolute no-brainer for me! I spend  $300+ per month on my health practice. Many of those expenses qualify  for HSA dollars through Crates, saving me $100+ monthly."
+                  "Not only did I save hundreds of dollars but I also discovered new brands and products that I turned out to love. "
                 }
               />
             </Slider>
@@ -100,17 +100,17 @@ const Reviews = () => {
               <CustomerProfile
                 img={Group2}
                 name={"Viren B"}
-                profession={"Personal IT Expert"}
+                profession={"Personal finance Expert"}
               />
               <CustomerProfile
                 img={Img34}
-                name={"Viren B"}
-                profession={"Personal IT Expert"}
+                name={"Victoria C"}
+                profession={"Health newbie"}
               />
               <CustomerProfile
                 img={Img4}
-                name={"Viren B"}
-                profession={"Personal IT Expert"}
+                name={"Elan M"}
+                profession={"Health enthusiast"}
               />
             </Slider>
           </div>
