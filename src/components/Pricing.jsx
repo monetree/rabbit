@@ -7,10 +7,7 @@ import PriceCoralTick from "../assets/images/price-tick-coral.svg";
 
 const Pricing = () => {
   return (
-    <section
-      id="eligibleProducts"
-      className="px-4 pt-12 bg-bottom bg-cover xl:px-52 about-section pb-14 bg-lightBeige"
-    >
+    <section className="px-4 pt-12 bg-bottom bg-cover xl:px-52 about-section pb-14 bg-lightBeige">
       <div className="container mx-auto">
         <div className="text-center">
           <p className="text-sm font-medium leading-5 tracking-normal text-center uppercase font-lato text-coffee ">
