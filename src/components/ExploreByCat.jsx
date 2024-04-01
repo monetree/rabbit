@@ -3,9 +3,15 @@ import FitnessImg from "../assets/images/Frame 437.png";
 import CloudImg from "../assets/images/Frame 437 (3).png";
 import NutritionImg from "../assets/images/Frame 437 (2).png";
 import HealthAndTechImg from "../assets/images/Frame 437 (1).png";
+import { VITE_MARKETPLACE_URL } from "../utils/Constants";
+import { Link } from "react-router-dom";
+
 const ExploreByCat = () => {
   return (
-    <section class="px-4 xl:px-4  bg-cover bg-bottom  pb-14 pt-12 bg-darkGreen">
+    <section
+      id="eligibleProducts"
+      class="px-4 xl:px-4  bg-cover bg-bottom  pb-14 pt-12 bg-darkGreen"
+    >
       <div class="container mx-auto">
         <div class="text-center">
           <p class="font-lato text-sm leading-5 tracking-normal text-center text-beige uppercase ">
@@ -29,7 +35,10 @@ const ExploreByCat = () => {
                   </figure>
                 </div>
                 <p class="text text-base text-white mt-3">Fitness</p>
-                <a href="" class=" text-sm flex  items-center text-coffee">
+                <Link
+                  to={`${VITE_MARKETPLACE_URL}/explore/fitness`}
+                  class=" text-sm flex  items-center text-coffee"
+                >
                   Explore
                   <svg
                     class="ml-3"
@@ -44,7 +53,7 @@ const ExploreByCat = () => {
                       fill="#CB8966"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div class="col-span-4  md:col-span-2 lg:col-span-1  relative">
@@ -59,7 +68,10 @@ const ExploreByCat = () => {
                 <p class="text text-base text-white mt-3">
                   Health Tech & wearables
                 </p>
-                <a href="" class=" text-sm flex  items-center text-coffee">
+                <Link
+                  to={`${VITE_MARKETPLACE_URL}/explore/health-tech-and-wearables`}
+                  class=" text-sm flex  items-center text-coffee"
+                >
                   Explore
                   <svg
                     class="ml-3"
@@ -74,7 +86,7 @@ const ExploreByCat = () => {
                       fill="#CB8966"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div class="col-span-4  md:col-span-2 lg:col-span-1  relative">
@@ -87,7 +99,10 @@ const ExploreByCat = () => {
                   </figure>
                 </div>
                 <p class="text text-base text-white mt-3">Nutrition</p>
-                <a href="" class=" text-sm flex  items-center text-coffee">
+                <Link
+                  to={`${VITE_MARKETPLACE_URL}/explore/nutrition`}
+                  class=" text-sm flex  items-center text-coffee"
+                >
                   Explore
                   <svg
                     class="ml-3"
@@ -102,7 +117,7 @@ const ExploreByCat = () => {
                       fill="#CB8966"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div class="col-span-4  md:col-span-2 lg:col-span-1  relative">
@@ -117,7 +132,10 @@ const ExploreByCat = () => {
                 <p class="text text-base text-white mt-3">
                   Saunas & cold plunges
                 </p>
-                <a href="" class=" text-sm flex  items-center text-coffee">
+                <Link
+                  to={`${VITE_MARKETPLACE_URL}/explore/saunas-and-cold-plunges`}
+                  class=" text-sm flex  items-center text-coffee"
+                >
                   Explore
                   <svg
                     class="ml-3"
@@ -132,7 +150,7 @@ const ExploreByCat = () => {
                       fill="#CB8966"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
