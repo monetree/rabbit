@@ -38,9 +38,7 @@ const Pricing = () => {
                       $35
                     </span>
                     <div>
-                      <span className="text-sm text-selfGray ">
-                        Per Product
-                      </span>
+                      <span className="text-sm text-selfGray ">Annually</span>
                     </div>
                   </div>
                 </div>
@@ -133,13 +131,6 @@ const Pricing = () => {
                   <li className="flex items-start mb-2">
                     <img src={PriceCoralTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium text-white md:text-sm">
-                      12 months of access
-                    </span>
-                  </li>
-
-                  <li className="flex items-start mb-2">
-                    <img src={PriceCoralTick} className="w-4 mr-2" />
-                    <span className="text-sm font-medium text-white md:text-sm">
                       HSA/FSA & IRS compliance dashboard
                     </span>
                   </li>
@@ -206,13 +197,6 @@ const Pricing = () => {
                     <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium md:text-sm text-selfGray">
                       Access to three LMNs
-                    </span>
-                  </li>
-
-                  <li className="flex items-start mb-2">
-                    <img src={PriceGreenTick} className="w-4 mr-2" />
-                    <span className="text-sm font-medium md:text-sm text-selfGray">
-                      12 months of access
                     </span>
                   </li>
 

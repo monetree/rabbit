@@ -16,12 +16,12 @@ const OurPartners = () => {
 
       <div className="flex justify-between items-center my-10 max-md:block">
         <div className="w-2/5 text-sm pb-4 text-selfGray leading-6  max-md:w-full">
-          The $79 annual subscription was an absolute no-brainer for me! I spend
+          The $89 annual subscription was an absolute no-brainer for me! I spend
           $300+ per month on my health practice. Many of those expenses qualify
-          for HSA dollars through Crates, saving me $100+ monthly. The $79
+          for HSA dollars through Crates, saving me $100+ monthly. The $89
           annual subscription was an absolute no-brainer for me! I spend $300+
           per month on my health practice. Many of those expenses qualify for
-          HSA dollars through Crates, saving me $100+ monthly. The $79 annual
+          HSA dollars through Crates, saving me $100+ monthly. The $89 annual
           subscription was an absolute no-brainer for me! I spend $300+ per
           month on my health practice. Many of those expenses qualify for HSA
           dollars through Crates, saving me $100+ monthly.
