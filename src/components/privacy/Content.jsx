@@ -6,69 +6,69 @@ const Content = () => {
       <div>
         <h2 className="text-xl font-bold my-5 text-darkGreen">Title 1</h2>
         <div className="text-sm">
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
         </div>
       </div>
       <div>
         <h2 className="text-xl font-bold my-5 text-darkGreen">Title 2</h2>
         <div className="text-sm">
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
         </div>
       </div>
       <div>
         <h2 className="text-xl font-bold my-5 text-darkGreen">Title 3</h2>
         <div className="text-sm">
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
         </div>
       </div>
       <div>
         <h2 className="text-xl font-bold my-5 text-darkGreen">Title 4</h2>
         <div className="text-sm">
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
-          Our members save an average of $325 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
+          Our members save an average of $327 annually from our partner brands.
         </div>
       </div>
     </div>

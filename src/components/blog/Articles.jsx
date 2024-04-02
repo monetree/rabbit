@@ -29,12 +29,12 @@ const Articles = () => {
             <div className="pl-2 pt-1">Stephanie Faris</div>
           </div>
           <div className="font-bold lg:text-xl text-dark">
-            Our members save an average of $325 annually from our partner brands
+            Our members save an average of $327 annually from our partner brands
           </div>
           <div className="text-xs text-selfGray">
-            Our members save an average of $325 annually from our partner
-            brands. Our members save an average of $325 annually from our
-            partner brands. Our members save an average of $325 annually from
+            Our members save an average of $327 annually from our partner
+            brands. Our members save an average of $327 annually from our
+            partner brands. Our members save an average of $327 annually from
             our partner brands.
           </div>
           <div className="flex items-center text-xs text-darkGreen font-medium uppercase lg:text-sm">
