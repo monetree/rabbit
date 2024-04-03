@@ -46,7 +46,7 @@ const Pricing = () => {
                   <li className="flex items-start mb-2">
                     <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-semibold md:text-sm text-selfGray">
-                      Average savings = $180 annually
+                      Average savings = $179 annually
                     </span>
                   </li>
 
@@ -110,7 +110,7 @@ const Pricing = () => {
                   <li className="flex items-start mb-2">
                     <img src={PriceCoralTick} className="w-4 mr-2" />
                     <span className="text-sm font-semibold text-white md:text-sm">
-                      Average savings = $395 annually
+                      Average savings = $397 annually
                     </span>
                   </li>
 
@@ -182,7 +182,7 @@ const Pricing = () => {
                   <li className="flex items-start mb-2">
                     <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-semibold md:text-sm text-selfGray">
-                      Average savings = $295 annually
+                      Average savings = $293 annually
                     </span>
                   </li>
 
