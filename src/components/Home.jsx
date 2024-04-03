@@ -13,7 +13,7 @@ import Reviews from "./Reviews";
 const Home = ({ createNewWaitlist }) => {
   return (
     <div>
-      <HeroSection setModal={createNewWaitlist} />
+      <HeroSection createNewWaitlist={createNewWaitlist} />
       <OurPartners />
       <HowItWorks />
       <Reviews />

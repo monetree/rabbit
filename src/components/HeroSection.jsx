@@ -23,26 +23,30 @@ const HeroSection = ({ createNewWaitlist }) => {
               quick and simple to use your HSA or FSA <br />
               dollars on the products that you love
             </p>
-            <div
-              class="mt-6 mx-auto bg-beige  border-2 hover:shadow-custom  rounded-[30px] cursor-pointer border-transparent
-        text-center border-solid   text-darkGreen   h-12 flex align-middle justify-center items-center w-56 hover:bg-darkGreen hover:text-white"
-            >
-              {VITE_ENV === "prod" ? (
-                <Link
-                  onClick={createNewWaitlist}
-                  class="leading-5 text-base font-medium"
-                >
+
+            {VITE_ENV === "prod" ? (
+              <div
+                onClick={createNewWaitlist}
+                class="mt-6 mx-auto bg-beige  border-2 hover:shadow-custom  rounded-[30px] cursor-pointer border-transparent
+             text-center border-solid   text-darkGreen   h-12 flex align-middle justify-center items-center w-56 hover:bg-darkGreen hover:text-white"
+              >
+                <Link class="leading-5 text-base font-medium">
                   Join waitlist
                 </Link>
-              ) : (
+              </div>
+            ) : (
+              <div
+                class="mt-6 mx-auto bg-beige  border-2 hover:shadow-custom  rounded-[30px] cursor-pointer border-transparent
+          text-center border-solid   text-darkGreen   h-12 flex align-middle justify-center items-center w-56 hover:bg-darkGreen hover:text-white"
+              >
                 <Link
                   to={`${VITE_MARKETPLACE_URL}/survey`}
                   class="leading-5 text-base font-medium"
                 >
                   Start Saving
                 </Link>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
