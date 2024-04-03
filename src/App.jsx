@@ -11,6 +11,7 @@ import { createWaitlist } from "./apis/api";
 import Header from "./components/Header";
 import ModalComponent from "./components/modal";
 import { useState } from "react";
+import Helmet from "react-helmet";
 
 const App = () => {
   const [modal, setModal] = useState(false);
@@ -52,7 +53,21 @@ const App = () => {
 
       {modal ? (
         <ModalComponent setIsModal={setModal}>
-          <>
+          <div
+            id="getWaitlistContainer"
+            data-waitlist_id="15315"
+            data-widget_type="WIDGET_1"
+          ></div>
+          <Helmet>
+            <link
+              rel="stylesheet"
+              type="text/css"
+              href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css"
+            />
+            <script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js"></script>
+          </Helmet>
+
+          {/* <>
             {success ? (
               <>
                 <div>
@@ -93,7 +108,7 @@ const App = () => {
                 </button>
               </form>
             )}
-          </>
+          </> */}
         </ModalComponent>
       ) : (
         ""
