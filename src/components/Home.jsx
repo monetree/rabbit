@@ -19,7 +19,7 @@ const Home = ({ createNewWaitlist }) => {
       <Reviews />
 
       <Benefits />
-      <Pricing />
+      <Pricing createNewWaitlist={createNewWaitlist} />
       <ExploreByCat />
       <Faqs />
       <Cta createNewWaitlist={createNewWaitlist} />

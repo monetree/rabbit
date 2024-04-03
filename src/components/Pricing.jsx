@@ -1,11 +1,11 @@
 import React from "react";
-import { VITE_MARKETPLACE_URL } from "../utils/Constants";
+import { VITE_ENV, VITE_MARKETPLACE_URL } from "../utils/Constants";
 import { Link } from "react-router-dom";
 
 import PriceGreenTick from "../assets/images/price-tick-green.svg";
 import PriceCoralTick from "../assets/images/price-tick-coral.svg";
 
-const Pricing = () => {
+const Pricing = ({ createNewWaitlist }) => {
   return (
     <section className="px-4 pt-12 bg-bottom bg-cover xl:px-52 about-section pb-14 bg-lightBeige">
       <div className="container mx-auto">
@@ -71,17 +71,30 @@ const Pricing = () => {
                     </span>
                   </li>
                 </ul>
-                <div
-                  className="absolute bottom-5 lg:bottom-7 left-7 right-7   border-2 mt-auto hover:shadow-custom  border-darkGreen rounded-[30px] cursor-pointer
-                 text-center border-solid  hover:bg-darkGreen hover:text-white  text-darkGreen   h-12 flex align-middle justify-center items-center"
-                >
-                  <Link
-                    to={`${VITE_MARKETPLACE_URL}/survey`}
-                    className="leading-5 text-base font-medium"
+
+                {VITE_ENV === "prod" ? (
+                  <div
+                    onClick={createNewWaitlist}
+                    className="absolute bottom-5 lg:bottom-7 left-7 right-7   border-2 mt-auto hover:shadow-custom  border-darkGreen rounded-[30px] cursor-pointer
+  text-center border-solid  hover:bg-darkGreen hover:text-white  text-darkGreen   h-12 flex align-middle justify-center items-center"
                   >
-                    Start Saving
-                  </Link>
-                </div>
+                    <Link className="leading-5 text-base font-medium">
+                      Join waitlist
+                    </Link>
+                  </div>
+                ) : (
+                  <div
+                    className="absolute bottom-5 lg:bottom-7 left-7 right-7   border-2 mt-auto hover:shadow-custom  border-darkGreen rounded-[30px] cursor-pointer
+                 text-center border-solid  hover:bg-darkGreen hover:text-white  text-darkGreen   h-12 flex align-middle justify-center items-center"
+                  >
+                    <Link
+                      to={`${VITE_MARKETPLACE_URL}/survey`}
+                      className="leading-5 text-base font-medium"
+                    >
+                      Start Saving
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
             <div className="relative basis-3/3 lg:basis-1/3 md:basis-2/3 overflow-hidden">
@@ -149,17 +162,28 @@ const Pricing = () => {
                     </span>
                   </li>
                 </ul>
-                <div
-                  className="absolute bottom-5 lg:bottom-7 left-7 right-7 bg-coffee  border-2 mt-auto hover:shadow-custom  border-coffee rounded-[30px] cursor-pointer
-              text-center border-solid   text-white   h-12 flex align-middle justify-center items-center"
-                >
-                  <Link
-                    to={`${VITE_MARKETPLACE_URL}/survey`}
-                    className="leading-5 text-base"
+
+                {VITE_ENV === "prod" ? (
+                  <div
+                    onClick={createNewWaitlist}
+                    className="absolute bottom-5 lg:bottom-7 left-7 right-7 bg-coffee  border-2 mt-auto hover:shadow-custom  border-coffee rounded-[30px] cursor-pointer
+text-center border-solid   text-white   h-12 flex align-middle justify-center items-center"
                   >
-                    Start Saving
-                  </Link>
-                </div>
+                    <Link className="leading-5 text-base">Join waitlist</Link>
+                  </div>
+                ) : (
+                  <div
+                    className="absolute bottom-5 lg:bottom-7 left-7 right-7 bg-coffee  border-2 mt-auto hover:shadow-custom  border-coffee rounded-[30px] cursor-pointer
+              text-center border-solid   text-white   h-12 flex align-middle justify-center items-center"
+                  >
+                    <Link
+                      to={`${VITE_MARKETPLACE_URL}/survey`}
+                      className="leading-5 text-base"
+                    >
+                      Start Saving
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
             <div className="relative basis-3/3 lg:basis-1/3 md:basis-2/3">
@@ -213,18 +237,29 @@ const Pricing = () => {
                     </span>
                   </li>
                 </ul>
-
-                <div
-                  className="absolute bottom-5 lg:bottom-7 left-7 right-7   border-2 mt-auto hover:shadow-custom  border-darkGreen rounded-[30px] cursor-pointer
-                 text-center border-solid  hover:bg-darkGreen hover:text-white  text-darkGreen   h-12 flex align-middle justify-center items-center"
-                >
-                  <Link
-                    to={`${VITE_MARKETPLACE_URL}/survey`}
-                    className="leading-5 text-base font-medium"
+                {VITE_ENV === "prod" ? (
+                  <div
+                    onClick={createNewWaitlist}
+                    className="absolute bottom-5 lg:bottom-7 left-7 right-7   border-2 mt-auto hover:shadow-custom  border-darkGreen rounded-[30px] cursor-pointer
+   text-center border-solid  hover:bg-darkGreen hover:text-white  text-darkGreen   h-12 flex align-middle justify-center items-center"
                   >
-                    Start Saving
-                  </Link>
-                </div>
+                    <Link className="leading-5 text-base font-medium">
+                      Join waitlist
+                    </Link>
+                  </div>
+                ) : (
+                  <div
+                    className="absolute bottom-5 lg:bottom-7 left-7 right-7   border-2 mt-auto hover:shadow-custom  border-darkGreen rounded-[30px] cursor-pointer
+                 text-center border-solid  hover:bg-darkGreen hover:text-white  text-darkGreen   h-12 flex align-middle justify-center items-center"
+                  >
+                    <Link
+                      to={`${VITE_MARKETPLACE_URL}/survey`}
+                      className="leading-5 text-base font-medium"
+                    >
+                      Start Saving
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           </div>
