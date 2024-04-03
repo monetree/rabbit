@@ -1,6 +1,5 @@
 import React from "react";
 import HeroSection from "./HeroSection";
-import Header from "./Header";
 import HowItWorks from "./HowItWorks";
 import OurPartners from "./OurPartners";
 import Benefits from "./Benefits";
@@ -11,11 +10,10 @@ import Cta from "./Cta";
 import Footer from "./Footer";
 import Reviews from "./Reviews";
 
-const Home = () => {
+const Home = ({ createNewWaitlist }) => {
   return (
     <div>
-      <Header />
-      <HeroSection />
+      <HeroSection setModal={createNewWaitlist} />
       <OurPartners />
       <HowItWorks />
       <Reviews />
@@ -24,7 +22,7 @@ const Home = () => {
       <Pricing />
       <ExploreByCat />
       <Faqs />
-      <Cta />
+      <Cta createNewWaitlist={createNewWaitlist} />
       <Footer />
     </div>
   );

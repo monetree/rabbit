@@ -8,7 +8,6 @@ import Cta from "../Cta";
 const Blog = () => {
   return (
     <div className="bg-stone-100">
-      <Header />
       <MainBlock />
       <Articles />
       <Cta />

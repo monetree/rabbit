@@ -1,9 +1,9 @@
 import React from "react";
 import Bg from "../assets/images/Main Block.png";
 import { Link } from "react-router-dom";
-import { VITE_MARKETPLACE_URL } from "../utils/Constants";
+import { VITE_ENV, VITE_MARKETPLACE_URL } from "../utils/Constants";
 
-const HeroSection = () => {
+const HeroSection = ({ createNewWaitlist }) => {
   return (
     <section
       className={`flex flex-col mt-20 items-center justify-center px-4 lg:px-4 h-[calc(100vh_-_80px)] bg-gray-400 bg-center bg-cover `}
@@ -27,13 +27,21 @@ const HeroSection = () => {
               class="mt-6 mx-auto bg-beige  border-2 hover:shadow-custom  rounded-[30px] cursor-pointer border-transparent
         text-center border-solid   text-darkGreen   h-12 flex align-middle justify-center items-center w-56 hover:bg-darkGreen hover:text-white"
             >
-              <Link
-                to={`${VITE_MARKETPLACE_URL}/survey`}
-                href=""
-                class="leading-5 text-base font-medium"
-              >
-                Start Saving
-              </Link>
+              {VITE_ENV === "prod" ? (
+                <Link
+                  onClick={createNewWaitlist}
+                  class="leading-5 text-base font-medium"
+                >
+                  Join waitlist
+                </Link>
+              ) : (
+                <Link
+                  to={`${VITE_MARKETPLACE_URL}/survey`}
+                  class="leading-5 text-base font-medium"
+                >
+                  Start Saving
+                </Link>
+              )}
             </div>
           </div>
         </div>

@@ -9,7 +9,6 @@ import Cta from "../Cta";
 const Article = () => {
   return (
     <div className="bg-stone-100">
-      <Header />
       <MainBlock />
       <Content />
       <RecommendedArticles />

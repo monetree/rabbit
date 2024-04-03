@@ -9,7 +9,6 @@ import Cta from "../Cta";
 const Support = () => {
   return (
     <div className="bg-stone-100">
-      <Header />
       <MainBlock />
       <Faqs />
       <Form />

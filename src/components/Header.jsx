@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { VITE_MARKETPLACE_URL } from "../utils/Constants";
+import { VITE_ENV, VITE_MARKETPLACE_URL } from "../utils/Constants";
 import Logo from "../assets/Logo.svg";
 import Crates from "../assets/Crates.svg";
 
-const Header = () => {
+const Header = ({ setModal }) => {
   const [menu, setMenu] = useState(false);
+
   return (
     <div className="fixed top-0 left-0 right-0 z-40  ">
       <div
@@ -110,27 +111,46 @@ const Header = () => {
                     </ul>
                   </div>
                   <div className=" col-span-9 lg:col-span-3 flex flex-col lg:flex-row items-center justify-end ">
-                    <div className="mb-3 lg:mb-0 w-fit mr-4">
-                      <Link
-                        to={`${VITE_MARKETPLACE_URL}/login`}
-                        className="font-medium  border-2
-                     hover:shadow-custom  lg:border-darkGreen rounded-[30px] cursor-pointer
-                      text-center border-solid bg-transparent hover:bg-darkGreen lg:hover:text-white text-white lg:text-darkGreen w-32 h-10 flex align-middle justify-center items-center"
-                      >
-                        <a className="leading-5 text-sm font-medium">Log In</a>
-                      </Link>
-                    </div>
+                    {VITE_ENV === "prod" ? (
+                      ""
+                    ) : (
+                      <div className="mb-3 lg:mb-0 w-fit mr-4">
+                        <Link
+                          to={`${VITE_MARKETPLACE_URL}/login`}
+                          className="font-medium  border-2
+                       hover:shadow-custom  lg:border-darkGreen rounded-[30px] cursor-pointer
+                        text-center border-solid bg-transparent hover:bg-darkGreen lg:hover:text-white text-white lg:text-darkGreen w-32 h-10 flex align-middle justify-center items-center"
+                        >
+                          <a className="leading-5 text-sm font-medium">
+                            Log In
+                          </a>
+                        </Link>
+                      </div>
+                    )}
 
-                    <Link
-                      to={`${VITE_MARKETPLACE_URL}/survey`}
-                      className=" text-darkGreen font-medium lg:text-white border-2 mb-4 lg:mb-0
+                    {VITE_ENV === "prod" ? (
+                      <Link
+                        onClick={() => setModal(true)}
+                        className=" text-darkGreen font-medium lg:text-white border-2 mb-4 lg:mb-0
+                    hover:shadow-custom hover:border-2 border-darkGreen rounded-[30px] cursor-pointer
+                     text-center border-solid bg-white lg:bg-darkGreen hover:bg-white lg:hover:text-darkGreen w-32 h-10 flex align-middle justify-center items-center"
+                      >
+                        <a className="leading-5 text-sm font-medium">
+                          Join waitlist
+                        </a>
+                      </Link>
+                    ) : (
+                      <Link
+                        to={`${VITE_MARKETPLACE_URL}/survey`}
+                        className=" text-darkGreen font-medium lg:text-white border-2 mb-4 lg:mb-0
                      hover:shadow-custom hover:border-2 border-darkGreen rounded-[30px] cursor-pointer
                       text-center border-solid bg-white lg:bg-darkGreen hover:bg-white lg:hover:text-darkGreen w-32 h-10 flex align-middle justify-center items-center"
-                    >
-                      <a className="leading-5 text-sm font-medium">
-                        Start Saving
-                      </a>
-                    </Link>
+                      >
+                        <a className="leading-5 text-sm font-medium">
+                          Start Saving
+                        </a>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>

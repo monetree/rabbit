@@ -8,7 +8,6 @@ import Cta from "../Cta";
 const TermsAndConditions = () => {
   return (
     <div className="bg-stone-100">
-      <Header />
       <MainBlock />
       <Content />
       <Cta />

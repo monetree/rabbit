@@ -12,7 +12,6 @@ import Cta from "../Cta";
 const Aboutus = () => {
   return (
     <div>
-      <Header />
       <MainBlock />
       <OurPartners />
       <Benefits />

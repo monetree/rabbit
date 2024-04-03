@@ -12,6 +12,7 @@
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "axios": "^1.6.8",
     "bootstrap-icons": "^1.11.3",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.7.3",
