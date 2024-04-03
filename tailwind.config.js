@@ -14,6 +14,7 @@ export default {
         darkGreen: "#02382A",
         lightBeige: "#F7F5F2",
         dark: "#100C0D",
+        waitlist: "#E3DED2",
       },
       fontSize: {
         xxs: "10px",
