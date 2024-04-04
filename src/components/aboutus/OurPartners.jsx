@@ -8,7 +8,7 @@ const OurPartners = () => {
         <div className="text-sm text-coffee">OUR PARTNERS</div>
         <div className="text-3xl w-4/6 mx-auto my-6 font-semibold">
           Our members save an average of{" "}
-          <span className="text-coffee">$325 annually </span>
+          <span className="text-coffee">$327 annually </span>
           <br />
           from our partner brands
         </div>
@@ -16,7 +16,7 @@ const OurPartners = () => {
 
       <div className="flex justify-between items-center my-10 max-md:block">
         <div className="w-2/5 text-sm pb-4 text-selfGray leading-6  max-md:w-full">
-          The $89 annual subscription was an absolute no-brainer for me! I spend
+          The $99 annual subscription was an absolute no-brainer for me! I spend
           $300+ per month on my health practice. Many of those expenses qualify
           for HSA dollars through Crates, saving me $100+ monthly. The $89
           annual subscription was an absolute no-brainer for me! I spend $300+

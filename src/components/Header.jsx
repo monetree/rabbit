@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import { VITE_ENV, VITE_MARKETPLACE_URL } from "../utils/Constants";
 import Logo from "../assets/Logo.svg";
 import Crates from "../assets/Crates.svg";
+import { useLocation } from "react-router-dom";
 
 const Header = ({ setModal }) => {
+  const location = useLocation();
+  const path = location.pathname;
+
   const [menu, setMenu] = useState(false);
 
   return (
@@ -49,7 +53,11 @@ const Header = ({ setModal }) => {
                   >
                     <i className="bi bi-x-lg text-[20px] text-white"></i>
                   </div>
-                  <div className="col-span-9 lg:col-span-6 flex items-center justify-center ">
+                  <div
+                    className={`col-span-9 lg:col-span-6 flex items-center justify-center ${
+                      path.includes("/about-us") ? "invisible" : ""
+                    } `}
+                  >
                     <ul className="flex items-center justify-center  text-start flex-col lg:flex-row lg:mt-2  ">
                       <li>
                         <div className="block lg:hidden mb-4">

@@ -88,7 +88,7 @@ const HowItWorks = () => {
             img={Step2IMG}
             title={"Issue a letter of medical necessity"}
             description={
-              "Our medical team reviews your details and issues a LMN in real-time making you eligible to use HSA or FSA dollars on your favorite products."
+              "A partner medical team reviews your details and issues a LMN in real-time making you eligible to use HSA or FSA dollars on your favorite products."
             }
           />
           <SliderItem
@@ -104,7 +104,7 @@ const HowItWorks = () => {
             img={Step4IMG}
             title={"Automate reimbursement"}
             description={
-              "Upload your receipt and we partner with your HSA or FSA administrator to ensure you are reimbursed in a timely manner (4-21 days)."
+              "Simply upload your receipt and we partner with your HSA or FSA administrator to ensure you are reimbursed in a timely manner (4-21 days)."
             }
           />
           <SliderItem
@@ -112,7 +112,7 @@ const HowItWorks = () => {
             img={Step1IMG}
             title={"Check your eligibility"}
             description={
-              "Take a short survey to assess your medical eligibility (e.g. anyone who is preventing, managing, or reversing disease is elgible)."
+              "Take a short online survey to assess your medical eligibility (e.g. patients who are preventing, managing, or reversing disease is eligible)."
             }
           />
         </Slider>

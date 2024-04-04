@@ -43,7 +43,7 @@ const App = () => {
           }
         />
         <Route path="/about-us" element={<Aboutus />} />
-        <Route path="/blog" element={<Blog />} />
+        {/* <Route path="/blog" element={<Blog />} /> */}
         <Route path="/article" element={<Article />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsAndConditions />} />

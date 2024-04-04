@@ -42,6 +42,11 @@ const Pricing = ({ createNewWaitlist }) => {
                     </div>
                   </div>
                 </div>
+
+                <h1 className="text-xl font-semibold text-darkGreen text-center mb-8">
+                  One product plan
+                </h1>
+
                 <ul>
                   <li className="flex items-start mb-2">
                     <img src={PriceGreenTick} className="w-4 mr-2" />
@@ -67,7 +72,7 @@ const Pricing = ({ createNewWaitlist }) => {
                   <li className="flex items-start mb-2">
                     <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium md:text-sm text-selfGray">
-                      HSA/FSA & IRS compliance dashboard
+                      Compliance dashboard
                     </span>
                   </li>
                 </ul>
@@ -119,6 +124,11 @@ const Pricing = ({ createNewWaitlist }) => {
                     </div>
                   </div>
                 </div>
+
+                <h1 className="text-xl font-semibold text-white text-center mb-8">
+                  Unlimited product plan
+                </h1>
+
                 <ul>
                   <li className="flex items-start mb-2">
                     <img src={PriceCoralTick} className="w-4 mr-2" />
@@ -144,7 +154,7 @@ const Pricing = ({ createNewWaitlist }) => {
                   <li className="flex items-start mb-2">
                     <img src={PriceCoralTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium text-white md:text-sm">
-                      HSA/FSA & IRS compliance dashboard
+                      Compliance dashboard
                     </span>
                   </li>
 
@@ -189,7 +199,7 @@ text-center border-solid   text-white   h-12 flex align-middle justify-center it
             <div className="relative basis-3/3 lg:basis-1/3 md:basis-2/3">
               <div className="h-full bg-white rounded-3xl px-7 pt-20 pb-28">
                 <div className="flex items-center justify-between w-full mb-7">
-                  <h1 className="text-3xl font-semibold text-white">
+                  <h1 className="text-3xl font-semibold text-darkGreen">
                     Pro <br />
                     Saver
                   </h1>
@@ -202,6 +212,11 @@ text-center border-solid   text-white   h-12 flex align-middle justify-center it
                     </div>
                   </div>
                 </div>
+
+                <h1 className="text-xl font-semibold text-darkGreen mb-8 text-center">
+                  Three product plan
+                </h1>
+
                 <ul>
                   <li className="flex items-start mb-2">
                     <img src={PriceGreenTick} className="w-4 mr-2" />
@@ -227,7 +242,7 @@ text-center border-solid   text-white   h-12 flex align-middle justify-center it
                   <li className="flex items-start mb-2">
                     <img src={PriceGreenTick} className="w-4 mr-2" />
                     <span className="text-sm font-medium md:text-sm text-selfGray">
-                      HSA/FSA & IRS compliance dashboard
+                      Compliance dashboard
                     </span>
                   </li>
                   <li className="flex items-start mb-2">

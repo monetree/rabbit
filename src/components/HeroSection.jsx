@@ -20,8 +20,8 @@ const HeroSection = ({ createNewWaitlist }) => {
             </h1>
             <p className="mt-6 text-base leading-6 tracking-normal text-center text-beige">
               We partner with the world’s leading wellness brands and make it
-              quick and simple to use your HSA or FSA <br />
-              dollars on the products that you love
+              quick and simple to use your HSA or FSA <br /> dollars on the
+              wellness products that you actually love
             </p>
 
             {VITE_ENV === "prod" ? (

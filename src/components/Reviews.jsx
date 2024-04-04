@@ -70,7 +70,7 @@ const Reviews = () => {
             >
               <ReviewMsg
                 text={
-                  "The $89 annual subscription was an absolute no-brainer for me! I spend $300+ per month on my health practice. Many of those expenses qualify for HSA dollars through Crates, saving me $100+ monthly. "
+                  "The $99 annual subscription was an absolute no-brainer for me! I spend  $300+ per month on my health practice. Many of those expenses qualify for HSA dollars through Crates, saving me $100+ monthly."
                 }
               />
               <ReviewMsg

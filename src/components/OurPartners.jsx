@@ -34,7 +34,7 @@ const OurPartners = () => {
 
             <h1 className="mt-4 text-3xl font-semibold tracking-normal text-center leading-13">
               Our members save an average of
-              <span className="text-coffee"> $325 annually</span> <br />
+              <span className="text-coffee"> $327 annually</span> <br />
               from our partner brands
             </h1>
             <div

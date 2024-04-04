@@ -61,8 +61,8 @@ const Benefits = () => {
                 convenience
               </h2>
               <p className="text-sm font-normal text-selfGray">
-                Use your personal card to avoid the annoying HSA card declines
-                and we will automate reimbursement for you.
+                Use your personal card to avoid the annoying HSA or FSA card
+                declines and we will automate reimbursement for you
               </p>
             </div>
           </div>
@@ -77,6 +77,7 @@ const Benefits = () => {
               <p className="text-sm font-normal text-selfGray">
                 Our medical team is constantly evaluating new brands/products to
                 give you access to the most trusted and effective products
+                wellness product to help you live a happier, healthier life
               </p>
             </div>
           </div>
@@ -91,9 +92,10 @@ const Benefits = () => {
               <div className="lg:w-[50%]">
                 <h2 className="text-xl font-medium text-white">Save time</h2>
                 <p className="mt-4 text-sm font-normal text-white">
-                  We offer a short online health survey and use AI to support
-                  our medical team’s review of your profile so we can instantly
-                  issue you a Letter of Medical Necessity
+                  We offer a short online health survey (no need to deal with
+                  the hassle of making an doctor’s appointment!) and a partner
+                  medical team quickly reviews of your profile so we can
+                  instantly issue you a Letter of Medical Necessity
                 </p>
               </div>
               <div className="flex flex-col items-center justify-end">
