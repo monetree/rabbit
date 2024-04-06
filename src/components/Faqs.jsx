@@ -115,17 +115,10 @@ const Faqs = () => {
                   <Accordion.Content className="!bg-white relative !rounded-br-xl !rounded-bl-xl -mt-2 after:absolute after:top-2 after:left-5 after:right-5 after:opacity-40 after:border-b after:border-selfGray">
                     <div class="py-5   border-gray-200 dark:border-gray-700">
                       <p class="mb-0 pb-0 text-sm text-selfGray ">
-                        Absolutely! We are always evaluating new categories,
-                        brands, and products. Please send us an email at
-                        <a
-                          href="mailto:info@ourservice.com"
-                          className=" text-beige hover:text-darkGreen"
-                        >
-                          info@crateshealth.com
-                        </a>{" "}
-                        with your suggestion. If you are Ultimate Saver
-                        subscriber, you have the option to submit a custom
-                        request and we will prioritize these requests.
+                        The IRS determines which products do or do not require
+                        Letters of Medical Necessity. The IRS realizes that
+                        medical professionals will be better suited to determine
+                        medical necessity for certain products.
                       </p>
                     </div>
                   </Accordion.Content>
