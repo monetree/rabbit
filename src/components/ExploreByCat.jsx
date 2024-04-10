@@ -3,7 +3,7 @@ import FitnessImg from "../assets/images/Frame 437.png";
 import CloudImg from "../assets/images/Frame 437 (3).png";
 import NutritionImg from "../assets/images/Frame 437 (2).png";
 import HealthAndTechImg from "../assets/images/Frame 437 (1).png";
-import { VITE_MARKETPLACE_URL } from "../utils/Constants";
+import { VITE_ENV, VITE_MARKETPLACE_URL } from "../utils/Constants";
 import { Link } from "react-router-dom";
 
 const ExploreByCat = () => {
@@ -36,7 +36,11 @@ const ExploreByCat = () => {
                 </div>
                 <p class="text text-base text-white mt-3">Fitness</p>
                 <Link
-                  to={`${VITE_MARKETPLACE_URL}/explore/fitness`}
+                  to={
+                    VITE_ENV === "prod"
+                      ? "/"
+                      : `${VITE_MARKETPLACE_URL}/explore/fitness`
+                  }
                   class=" text-sm flex  items-center text-coffee"
                 >
                   Explore
@@ -69,7 +73,11 @@ const ExploreByCat = () => {
                   Health Tech & wearables
                 </p>
                 <Link
-                  to={`${VITE_MARKETPLACE_URL}/explore/health-tech-and-wearables`}
+                  to={
+                    VITE_ENV === "prod"
+                      ? "/"
+                      : `${VITE_MARKETPLACE_URL}/explore/health-tech-and-wearables`
+                  }
                   class=" text-sm flex  items-center text-coffee"
                 >
                   Explore
@@ -100,7 +108,11 @@ const ExploreByCat = () => {
                 </div>
                 <p class="text text-base text-white mt-3">Nutrition</p>
                 <Link
-                  to={`${VITE_MARKETPLACE_URL}/explore/nutrition`}
+                  to={
+                    VITE_ENV === "prod"
+                      ? "/"
+                      : `${VITE_MARKETPLACE_URL}/explore/nutrition`
+                  }
                   class=" text-sm flex  items-center text-coffee"
                 >
                   Explore
@@ -133,7 +145,11 @@ const ExploreByCat = () => {
                   Saunas & cold plunges
                 </p>
                 <Link
-                  to={`${VITE_MARKETPLACE_URL}/explore/saunas-and-cold-plunges`}
+                  to={
+                    VITE_ENV === "prod"
+                      ? "/"
+                      : `${VITE_MARKETPLACE_URL}/explore/saunas-and-cold-plunges`
+                  }
                   class=" text-sm flex  items-center text-coffee"
                 >
                   Explore
