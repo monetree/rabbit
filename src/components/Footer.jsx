@@ -3,6 +3,7 @@ import IconEmail from "../assets/images/email.svg";
 import { Link } from "react-router-dom";
 import LogoWhite from "../assets/logo-white.svg";
 import CratesWhite from "../assets/crates-white.png";
+import { VITE_ENV } from "../utils/Constants";
 
 const Footer = () => {
   return (
@@ -71,11 +72,13 @@ const Footer = () => {
               </div>
               <div className="col-span-12 md:col-span-4 lg:col-span-3 mx-auto md:text-start  text-center mb-5 md:mb-0">
                 <h3 className="text-beige text-lg font-semibold mb-4">
-                  <Link to="/about-us"> About Us</Link>
+                  <Link to={VITE_ENV === "prod" ? "/" : `about-us`}>
+                    About Us
+                  </Link>
                 </h3>
                 <div className="mb-3">
                   <Link
-                    to="/blog"
+                    to={VITE_ENV === "prod" ? "/" : `/blog`}
                     className=" text-beige hover:text-coffee text-sm"
                   >
                     Blog
