@@ -36,7 +36,7 @@ const ExploreByCat = () => {
                 </div>
                 <p class="text text-base text-white mt-3">Fitness</p>
                 <Link
-                  to={`${VITE_MARKETPLACE_URL}/explore/fitness`}
+                  to={`https://www.crateshealth.com`}
                   class=" text-sm flex  items-center text-coffee"
                 >
                   Explore
@@ -69,7 +69,7 @@ const ExploreByCat = () => {
                   Health Tech & wearables
                 </p>
                 <Link
-                  to={`${VITE_MARKETPLACE_URL}/explore/health-tech-and-wearables`}
+                  to={`https://www.crateshealth.com`}
                   class=" text-sm flex  items-center text-coffee"
                 >
                   Explore
@@ -100,7 +100,7 @@ const ExploreByCat = () => {
                 </div>
                 <p class="text text-base text-white mt-3">Nutrition</p>
                 <Link
-                  to={`${VITE_MARKETPLACE_URL}/explore/nutrition`}
+                  to={`https://www.crateshealth.com`}
                   class=" text-sm flex  items-center text-coffee"
                 >
                   Explore
@@ -133,7 +133,7 @@ const ExploreByCat = () => {
                   Saunas & cold plunges
                 </p>
                 <Link
-                  to={`${VITE_MARKETPLACE_URL}/explore/saunas-and-cold-plunges`}
+                  to={`https://www.crateshealth.com`}
                   class=" text-sm flex  items-center text-coffee"
                 >
                   Explore
