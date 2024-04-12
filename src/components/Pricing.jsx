@@ -281,7 +281,7 @@ text-center border-solid   text-white   h-12 flex align-middle justify-center it
             </div>
           </div>
 
-          <div className=" mt-12">
+          <div className="mt-12">
             <p className="text-center text-darkGreen text-2xl font-semibold">
               Start saving with confidence! If you do not save up to the amount
               of your subscription, <br />{" "}
