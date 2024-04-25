@@ -21,6 +21,7 @@ import Fourteen from "../assets/images/brands/14.svg";
 import Fifteen from "../assets/images/brands/15.svg";
 import Sixteen from "../assets/images/brands/16.svg";
 import Seventeen from "../assets/images/brands/17.svg";
+import Ninteen from "../assets/images/brands/19.svg";
 
 const OurPartners = () => {
   return (
@@ -62,11 +63,11 @@ const OurPartners = () => {
                     <img src={One} alt="" className="w-auto h-5" />
                   </div>
                 </SplideSlide>
-                {/* <SplideSlide>
+                <SplideSlide>
                   <div className="slider-logo h-[55px] lg:h-20 bg-white  w-40 px-4 rounded-md flex justify-center items-center mx-2">
                     <img src={Two} alt="" className="w-auto h-5" />
                   </div>
-                </SplideSlide> */}
+                </SplideSlide>
                 <SplideSlide>
                   <div className="slider-logo h-[55px] lg:h-20 bg-white  w-40 px-4 rounded-md flex justify-center items-center mx-2">
                     <img src={Three} alt="" className="w-auto h-5" />
@@ -166,6 +167,11 @@ const OurPartners = () => {
                 <SplideSlide>
                   <div className="slider-logo h-[55px] lg:h-20 bg-white  w-40 px-4 rounded-md flex justify-center items-center mx-2">
                     <img src={Seventeen} alt="" className="w-auto h-5" />
+                  </div>
+                </SplideSlide>
+                <SplideSlide>
+                  <div className="slider-logo h-[55px] lg:h-20 bg-white  w-40 px-4 rounded-md flex justify-center items-center mx-2">
+                    <img src={Ninteen} alt="" className="w-auto h-5" />
                   </div>
                 </SplideSlide>
               </Splide>
