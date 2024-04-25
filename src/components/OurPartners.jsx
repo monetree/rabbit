@@ -62,11 +62,11 @@ const OurPartners = () => {
                     <img src={One} alt="" className="w-auto h-5" />
                   </div>
                 </SplideSlide>
-                <SplideSlide>
+                {/* <SplideSlide>
                   <div className="slider-logo h-[55px] lg:h-20 bg-white  w-40 px-4 rounded-md flex justify-center items-center mx-2">
                     <img src={Two} alt="" className="w-auto h-5" />
                   </div>
-                </SplideSlide>
+                </SplideSlide> */}
                 <SplideSlide>
                   <div className="slider-logo h-[55px] lg:h-20 bg-white  w-40 px-4 rounded-md flex justify-center items-center mx-2">
                     <img src={Three} alt="" className="w-auto h-5" />
