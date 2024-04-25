@@ -137,6 +137,7 @@ const Faqs = () => {
                           href="mailto:info@ourservice.com"
                           className=" text-beige hover:text-darkGreen"
                         >
+                          {" "}
                           info@crateshealth.com
                         </a>{" "}
                         with your suggestion. If you are Ultimate Saver
