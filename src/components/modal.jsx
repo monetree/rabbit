@@ -1,5 +1,5 @@
 import "./style.scss";
-import Close from "../../assets/icons/close.svg";
+import Close from "../assets/icons/close.svg";
 
 const ModalComponent = ({
   setIsModal,
