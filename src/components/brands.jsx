@@ -2,10 +2,15 @@ import { useEffect, useState } from "react";
 import {
   createBrand,
   deleteBrand,
+  fetchEligibility,
+  fetchTreatment,
   getBrands,
   getCategories,
+  getHealthConditions,
   getSubCategories,
   updateBrand,
+  updateEligibility,
+  updateTreatment,
 } from "../apis/api";
 import Search from "./search";
 import ModalComponent from "./modal";
@@ -20,12 +25,100 @@ const Brand = () => {
   const [brands, setBrands] = useState([]);
   const [newItem, setNewItem] = useState(false);
   const [brand, setBrand] = useState(null);
+  const [selectedBrand, setSelectedBrand] = useState(null);
+  const [healthCondition, setHealthCondition] = useState(null);
   const [page, setPage] = useState(1);
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
   const [selectedSubCategories, setSelectedSubCategories] = useState([]);
   const [category, setCategory] = useState(null);
   const [subCategory, setSubCategory] = useState(null);
+  const [treatment, setTreatment] = useState(null);
+  const [eligibility, setEligibility] = useState([]);
+  const [healthConditions, setHealthConditions] = useState([]);
+  const [showTreatment, setShowTreatment] = useState(false);
+  const [showEligibility, setShowEligibility] = useState(false);
+  const [frequency, setFrequency] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const treatmentUpdate = async (ev) => {
+    ev.preventDefault();
+    try {
+      const res = await updateTreatment({
+        brand_id: selectedBrand,
+        health_condition_id: healthCondition,
+        treatment: treatment.treatment,
+        clinical_rationale: treatment.clinical_rationale,
+        medical_condition: treatment.medical_condition,
+      });
+      setTreatment(res.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setTreatment(null);
+      setShowTreatment(false);
+      setHealthCondition(null);
+      setBrand(null);
+    }
+  };
+
+  const eligibilityUpdate = async () => {
+    try {
+      setLoading(true);
+      const res = await updateEligibility({
+        eligibility,
+      });
+      setTreatment(res.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+      setEligibility([]);
+      setShowEligibility(false);
+      setHealthCondition(null);
+      setBrand(null);
+    }
+  };
+
+  const getTreatment = async () => {
+    try {
+      const res = await fetchTreatment({
+        brand_id: selectedBrand,
+        health_condition_id: healthCondition,
+      });
+      setTreatment(res.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+    }
+  };
+
+  const getEligibility = async () => {
+    try {
+      const res = await fetchEligibility({
+        brand_id: selectedBrand,
+      });
+      setEligibility(res.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+    }
+  };
+
+  useEffect(() => {
+    if (healthCondition && selectedBrand) {
+      getTreatment();
+    } else {
+      if (selectedBrand) {
+        getEligibility();
+      }
+    }
+  }, [healthCondition, selectedBrand]);
+
+  const fetchHealthConditions = async () => {
+    const res = await getHealthConditions();
+    setHealthConditions(res.data);
+  };
 
   const fetchBrands = async () => {
     const res = await getBrands();
@@ -122,6 +215,7 @@ const Brand = () => {
     fetchBrands();
     fetchSubCategories();
     fetchCategories();
+    fetchHealthConditions();
   }, []);
 
   const filteredItems = brands.filter((item) =>
@@ -129,6 +223,36 @@ const Brand = () => {
   );
   return (
     <>
+      <div className="py-4 flex justify-end">
+        <div style={{ width: "500px" }}>
+          <Search setSearch={setSearch} />
+        </div>
+
+        <div
+          class="px-6 py-1 cursor-pointer flex"
+          onClick={() => setNewItem(true)}
+        >
+          <button
+            type="button"
+            className="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 flex items-center justify-center"
+          >
+            <svg
+              className="w-6 h-6 text-white mr-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fillRule="evenodd"
+                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4.243a1 1 0 1 0-2 0V11H7.757a1 1 0 1 0 0 2H11v3.243a1 1 0 1 0 2 0V13h3.243a1 1 0 1 0 0-2H13V7.757Z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span className="mt-0.5">Add New Brand</span>
+          </button>
+        </div>
+      </div>
       <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
@@ -141,33 +265,27 @@ const Brand = () => {
             </th>
 
             <th scope="col" class="px-6 py-3">
+              Image
+            </th>
+
+            <th scope="col" class="px-6 py-3">
+              Why H E
+            </th>
+
+            <th scope="col" class="px-6 py-3">
+              Website
+            </th>
+
+            <th scope="col" class="px-6 py-3">
+              Treatment
+            </th>
+
+            <th scope="col" class="px-6 py-3">
+              Eligibility
+            </th>
+
+            <th scope="col" class="px-6 py-3">
               Action
-            </th>
-
-            <th
-              scope="col"
-              class="px-6 py-3 cursor-pointer flex"
-              onClick={() => setNewItem(true)}
-            >
-              <svg
-                class="w-6 h-6 text-gray-800 dark:text-white mt-3"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4.243a1 1 0 1 0-2 0V11H7.757a1 1 0 1 0 0 2H11v3.243a1 1 0 1 0 2 0V13h3.243a1 1 0 1 0 0-2H13V7.757Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </th>
-
-            <th scope="col" class="px-6 py-3 cursor-pointer">
-              <Search setSearch={setSearch} />
             </th>
           </tr>
         </thead>
@@ -176,30 +294,85 @@ const Brand = () => {
             .slice((page - 1) * 10, page * 10)
             .map((item, index) => (
               <tr
-                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 "
                 key={index}
               >
                 <th
                   scope="row"
-                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-xs"
                 >
                   {item.name}
                 </th>
 
                 <th
                   scope="row"
-                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-xs"
                 >
                   {item.category_name}
                 </th>
 
-                <td class="px-6 py-4 space-x-4 flex">
+                <th
+                  scope="row"
+                  class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-xs"
+                >
+                  {item.logo_url ? "Exists" : "Not exists"}
+                </th>
+
+                <th
+                  scope="row"
+                  class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-xs"
+                >
+                  {item.why_hsa_eligible.slice(0, 10)}
+                </th>
+
+                <th
+                  scope="row"
+                  class="px-4 py-2 font-medium  whitespace-nowrap  text-xs"
+                >
+                  <a target="_blank" href={`https://${item.website}`}>
+                    {item.website}
+                  </a>
+                </th>
+
+                <th
+                  scope="row"
+                  class="px-4 py-2 font-medium whitespace-nowrap text-xs"
+                >
+                  <button
+                    onClick={() => {
+                      setSelectedBrand(item.id);
+                      setShowTreatment(true);
+                    }}
+                    type="button"
+                    class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    View Treatment
+                  </button>
+                </th>
+
+                <th
+                  scope="row"
+                  class="px-4 py-2 font-medium whitespace-nowrap text-xs"
+                >
+                  <button
+                    onClick={() => {
+                      setSelectedBrand(item.id);
+                      setShowEligibility(true);
+                    }}
+                    type="button"
+                    class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    View Eligibility
+                  </button>
+                </th>
+
+                <td class="px-4 py-2 space-x-4 flex text-xs">
                   <label
                     className="cursor-pointer hover:text-gray-700"
                     onClick={() => setBrand(item)}
                   >
                     <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      class="w-4 h-4 text-gray-800 dark:text-white"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -221,7 +394,7 @@ const Brand = () => {
                     onClick={() => deletePopup(item.id)}
                   >
                     <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      class="w-4 h-4 text-gray-800 dark:text-white"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -243,11 +416,9 @@ const Brand = () => {
             ))}
         </tbody>
       </table>
-
       <nav aria-label="Page navigation example" className="mt-8 float-right">
         <PaginationComponent brands={brands} setPage={setPage} page={page} />
       </nav>
-
       {brand ? (
         <ModalComponent setIsModal={setBrand}>
           <form className="max-w-sm mx-auto" onSubmit={updateBrandData}>
@@ -342,7 +513,6 @@ const Brand = () => {
       ) : (
         ""
       )}
-
       {newItem ? (
         <ModalComponent setIsModal={setNewItem}>
           <form className="max-w-sm mx-auto" onSubmit={createBrandData}>
@@ -418,6 +588,232 @@ const Brand = () => {
               Save
             </button>
           </form>
+        </ModalComponent>
+      ) : (
+        ""
+      )}
+      {showTreatment ? (
+        <ModalComponent setIsModal={setShowTreatment} lg={true}>
+          <form className="mx-auto" onSubmit={treatmentUpdate}>
+            <div className="flex flex-wrap gap-4 mb-5">
+              <div className="flex-1">
+                <label
+                  htmlFor="health-condition"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Select Health Condition
+                </label>
+                <select
+                  onChange={(e) => setHealthCondition(e.target.value)}
+                  value={healthCondition}
+                  id="health-condition"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
+                  <option>Select health condition</option>
+                  {healthConditions.map((item, index) => (
+                    <option value={item.id} key={index}>
+                      {item.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <div className="mb-5 flex-1">
+                <label
+                  htmlFor="message"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Medical condition
+                </label>
+                <textarea
+                  id="message"
+                  rows="4"
+                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Write your text here..."
+                  value={treatment?.medical_condition}
+                  onChange={(e) => {
+                    setTreatment({
+                      ...treatment,
+                      medical_condition: e.target.value,
+                    });
+                  }}
+                ></textarea>
+              </div>
+
+              <div className="mb-5 flex-1">
+                <label
+                  htmlFor="message"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Treatment
+                </label>
+                <textarea
+                  id="message"
+                  rows="4"
+                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Write your text here..."
+                  value={treatment?.treatment}
+                  onChange={(e) => {
+                    setTreatment({
+                      ...treatment,
+                      treatment: e.target.value,
+                    });
+                  }}
+                ></textarea>
+              </div>
+            </div>
+
+            <div className="mb-5">
+              <label
+                htmlFor="message"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Clinical rationale
+              </label>
+              <textarea
+                id="message"
+                rows="4"
+                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Write your text here..."
+                value={treatment?.clinical_rationale}
+                onChange={(e) => {
+                  setTreatment({
+                    ...treatment,
+                    clinical_rationale: e.target.value,
+                  });
+                }}
+              ></textarea>
+            </div>
+
+            <div className="mb-5">
+              <label
+                htmlFor="status-select"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Select frequency
+              </label>
+              <select
+                onChange={(e) => setFrequency(e.target.value)}
+                value={frequency}
+                id="status-select"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option>Select frequency</option>
+                <option value={"High"}>High</option>
+                <option value={"Medium"}>Medium</option>
+                <option value={"Low"}>Low</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Save
+            </button>
+          </form>
+        </ModalComponent>
+      ) : (
+        ""
+      )}
+      {console.log("eligibility", eligibility)}
+      {showEligibility ? (
+        <ModalComponent setIsModal={setShowEligibility}>
+          <>
+            <div className="overflow-auto max-h-[500px]">
+              <table
+                class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                style={{ height: "300px" }}
+              >
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <tr>
+                    <th scope="col" class="px-4 py-3">
+                      Health condition
+                    </th>
+
+                    <th scope="col" class="px-4 py-3">
+                      Is eligible ?
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {eligibility.map((item, index) => (
+                    <tr
+                      className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                      key={index}
+                    >
+                      <td
+                        scope="row"
+                        className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-xs"
+                      >
+                        {item.health_condition_name}
+                      </td>
+
+                      <td
+                        scope="row"
+                        className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-xs"
+                      >
+                        <input
+                          onChange={(e) => {
+                            setEligibility(
+                              eligibility.map((innerItem, innerIndex) => {
+                                if (innerIndex === index) {
+                                  return {
+                                    ...innerItem,
+                                    is_eligible: e.target.checked,
+                                  };
+                                }
+                                return innerItem;
+                              })
+                            );
+                          }}
+                          id={`bordered-checkbox-${index}`}
+                          type="checkbox"
+                          checked={item.is_eligible}
+                          name={`bordered-checkbox-${index}`}
+                          className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
+                        <label
+                          htmlFor={`bordered-checkbox-${index}`}
+                          className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                        >
+                          {item.is_eligible ? "Yes" : "No"}
+                        </label>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <button
+              disabled={loading}
+              onClick={eligibilityUpdate}
+              type="submit"
+              className="text-white mt-8 mb-8 float-right bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              {loading ? (
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+                  viewBox="0 0 100 101"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                    fill="currentFill"
+                  />
+                </svg>
+              ) : (
+                "Save"
+              )}
+            </button>
+          </>
         </ModalComponent>
       ) : (
         ""

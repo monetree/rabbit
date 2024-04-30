@@ -95,3 +95,19 @@ export const updateBrand = (params = {}) => {
 export const deleteBrand = (id) => {
   return instance.delete(`/brand/delete-brand/${id}`);
 };
+
+export const fetchTreatment = (params) => {
+  return instance.get(`/brand/fetch-treatment`, { params });
+};
+
+export const fetchEligibility = (params) => {
+  return instance.get(`/brand/fetch-eligibility`, { params });
+};
+
+export const updateTreatment = (payload) => {
+  return instance.patch(`/brand/update-treatment`, payload);
+};
+
+export const updateEligibility = (payload) => {
+  return instance.patch(`/brand/update-eligibility`, payload);
+};
