@@ -1,4 +1,4 @@
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import Category from "../../components/categories";
 import HsaAdministrators from "../../components/hsa-administrators";
 import Sidebar from "../../components/sidebar";
@@ -8,20 +8,6 @@ import HealthConditions from "../../components/health-conditions";
 import Brand from "../../components/brands";
 
 const Dashboard = () => {
-  const titleMappings = {
-    "hsa-administrators": "Hsa Administrators",
-    categories: "Categories",
-    "sub-categories": "Sub Categories",
-    "health-conditions": "Health Conditions",
-    brands: "Brands",
-  };
-  const componentMapping = {
-    brands: <Brand />,
-    "hsa-administrators": <HsaAdministrators />,
-    categories: <Category />,
-    "sub-categories": <SubCategory />,
-    "health-conditions": <HealthConditions />,
-  };
   const [tab, setTab] = useState("hsa-administrators");
 
   return (
