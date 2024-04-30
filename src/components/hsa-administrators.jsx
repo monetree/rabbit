@@ -6,7 +6,7 @@ import {
   updateHsaAdministrator,
 } from "../apis/api";
 import Search from "./search";
-import ModalComponent from "./Modal.jsx";
+import ModalComponent from "./modal";
 
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
