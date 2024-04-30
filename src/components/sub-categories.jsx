@@ -7,7 +7,7 @@ import {
   updateSubCategory,
 } from "../apis/api";
 import Search from "./search";
-import ModalComponent from "./Modal";
+import ModalComponent from "./Modal/index";
 
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
