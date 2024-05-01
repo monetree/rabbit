@@ -40,6 +40,7 @@ const Brand = () => {
   const [showEligibility, setShowEligibility] = useState(false);
   const [frequency, setFrequency] = useState("");
   const [loading, setLoading] = useState(false);
+  const [logo, setLogo] = useState("");
 
   const treatmentUpdate = async (ev) => {
     ev.preventDefault();
@@ -169,6 +170,7 @@ const Brand = () => {
         name: name,
         category_id: category,
         sub_category_id: subCategory,
+        logo: logo,
       });
       await fetchBrands();
     } catch (error) {
@@ -256,35 +258,39 @@ const Brand = () => {
       <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-4 py-3">
               Brand
             </th>
 
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-4 py-3">
               Category
             </th>
 
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-4 py-3">
+              Sub category
+            </th>
+
+            <th scope="col" class="px-4 py-3">
               Image
             </th>
 
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-4 py-3">
               Why H E
             </th>
 
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-4 py-3">
               Website
             </th>
 
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-4 py-3">
               Treatment
             </th>
 
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-4 py-3">
               Eligibility
             </th>
 
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-4 py-3">
               Action
             </th>
           </tr>
@@ -315,7 +321,14 @@ const Brand = () => {
                   scope="row"
                   class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-xs"
                 >
-                  {item.logo_url ? "Exists" : "Not exists"}
+                  {item.sub_category_name}
+                </th>
+
+                <th
+                  scope="row"
+                  class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-xs"
+                >
+                  {item.logo ? "Exists" : "Not exists"}
                 </th>
 
                 <th
@@ -502,6 +515,25 @@ const Brand = () => {
               </div>
             </div>
 
+            <div className="mb-5">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Logo
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                placeholder="Brand name"
+                value={brand.logo}
+                onChange={(e) =>
+                  setBrand({
+                    ...brand,
+                    logo: e.target.value,
+                  })
+                }
+              />
+            </div>
+
             <button
               type="submit"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -579,6 +611,20 @@ const Brand = () => {
                   ))}
                 </select>
               </div>
+            </div>
+
+            <div className="mb-5">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Logo
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                placeholder="Brand name"
+                value={logo}
+                onChange={(e) => setLogo(e.target.value)}
+              />
             </div>
 
             <button
@@ -716,7 +762,6 @@ const Brand = () => {
       ) : (
         ""
       )}
-      {console.log("eligibility", eligibility)}
       {showEligibility ? (
         <ModalComponent setIsModal={setShowEligibility}>
           <>

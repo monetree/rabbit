@@ -107,7 +107,7 @@ const HealthConditions = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <span className="mt-0.5">Add New Brand</span>
+            <span className="mt-0.5">Add New Health condiotion</span>
           </button>
         </div>
       </div>
