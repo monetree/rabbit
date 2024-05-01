@@ -92,6 +92,10 @@ export const createBrand = (params = {}) => {
 export const updateBrand = (params = {}) => {
   return instance.patch("/brand/update-brand", params);
 };
+export const updateBrandStatus = (params = {}) => {
+  return instance.patch("/brand/update-brand-status", params);
+};
+
 export const deleteBrand = (id) => {
   return instance.delete(`/brand/delete-brand/${id}`);
 };
@@ -108,6 +112,13 @@ export const updateTreatment = (payload) => {
   return instance.patch(`/brand/update-treatment`, payload);
 };
 
+export const createBulkTreatment = (payload) => {
+  return instance.post(`/brand/create-bulk-treatments`, payload);
+};
+
 export const updateEligibility = (payload) => {
   return instance.patch(`/brand/update-eligibility`, payload);
 };
+
+export const uploadFile = (payload, headers) =>
+  instance.post(`/media/image-upload`, payload, headers);
