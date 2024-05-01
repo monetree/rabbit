@@ -28,6 +28,7 @@ const Treatment = () => {
       const data = response.data;
       const csv_url = data.imageUrl;
       await createBulkTreatment({ csv_url });
+      await fetchCategories();
     } catch (error) {
     } finally {
       setCategory(null);
@@ -71,7 +72,7 @@ const Treatment = () => {
                 scope="row"
                 class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                Pending
+                {category.treatment_status}
               </th>
 
               <td class="px-4 py-2 space-x-4 flex">
