@@ -27,7 +27,7 @@ const Treatment = () => {
       const response = await uploadFile(formData);
       const data = response.data;
       const csv_url = data.imageUrl;
-      await createBulkTreatment({ csv_url });
+      await createBulkTreatment({ csv_url, category_id: category.id });
       await fetchCategories();
     } catch (error) {
     } finally {

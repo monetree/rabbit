@@ -8,6 +8,7 @@ import HealthConditions from "../../components/health-conditions";
 import Brand from "../../components/brands";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Treatment from "../../components/treatments";
+import Summary from "../../components/summary";
 
 const Dashboard = () => {
   const [tab, setTab] = useState("hsa-administrators");
@@ -29,11 +30,7 @@ const Dashboard = () => {
               <Route path="/health-conditions" element={<HealthConditions />} />
               <Route path="/brands" element={<Brand />} />
               <Route path="/treatments" element={<Treatment />} />
-
-              <Route
-                path="/"
-                element={<Navigate replace to="hsa-administrators" />}
-              />
+              <Route path="/" element={<Summary />} />
             </Routes>
           </div>
         </div>
