@@ -122,3 +122,13 @@ export const updateEligibility = (payload) => {
 
 export const uploadFile = (payload, headers) =>
   instance.post(`/media/image-upload`, payload, headers);
+
+export const fetchSummary = () => {
+  return instance.get(`/brand/summary`);
+};
+
+export const fetchCustomBrands = () => instance.get(`/brand/get-custom-brands`);
+
+export const createCustomTreatment = (payload) => {
+  return instance.post(`/brand/create-custom-treatment`, payload);
+};
