@@ -96,6 +96,10 @@ export const updateBrandStatus = (params = {}) => {
   return instance.patch("/brand/update-brand-status", params);
 };
 
+export const updateCustomBrandStatus = (params = {}) => {
+  return instance.patch("/brand/update-custom-brand-status", params);
+};
+
 export const deleteBrand = (id) => {
   return instance.delete(`/brand/delete-brand/${id}`);
 };
