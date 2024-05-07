@@ -72,18 +72,18 @@ const Summary = () => {
       setLoading(true);
       const payload = {
         brand_id: brand.id,
-        health_condition_id: healthConditions[0].value,
+        health_condition_id: healthCondition,
         medical_condition: medicalCondition,
         treatment: treatment,
         clinical_rationale: clinicalRationale,
         user_id: brand.user_id,
       };
       await createCustomTreatment(payload);
+      await getCustomBrands();
     } catch {
     } finally {
       setLoading(false);
       setBrand(false);
-      getCustomBrands();
     }
   };
 
@@ -240,29 +240,13 @@ const Summary = () => {
                   scope="row"
                   class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
-                  {item.file_location ? (
-                    <>
-                      <a
-                        href={item.file_location}
-                        target="_blank"
-                        onClick={() => setBrand(item)}
-                        type="button"
-                        class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                      >
-                        View LMN
-                      </a>
-                    </>
-                  ) : (
-                    <>
-                      <button
-                        onClick={() => setBrand(item)}
-                        type="button"
-                        class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                      >
-                        Create LMN
-                      </button>
-                    </>
-                  )}
+                  <button
+                    onClick={() => setBrand(item)}
+                    type="button"
+                    class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Create LMN
+                  </button>
                 </td>
 
                 <td
@@ -314,6 +298,30 @@ const Summary = () => {
                   options={healthConditions}
                   defaultValue={brand.disease}
                 />
+              </div>
+
+              <hr class="h-px my-8 bg-gray-800 border-1" />
+
+              <div className="mb-5">
+                <label
+                  htmlFor="countries"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Select health condition
+                </label>
+                <select
+                  onChange={(e) => setHealthCondition(e.target.value)}
+                  value={healthCondition}
+                  id="countries"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
+                  <option>Select health condition</option>
+                  {healthConditions.map((item, index) => (
+                    <option value={item.value} key={index}>
+                      {item.label}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div className="flex flex-wrap gap-4">

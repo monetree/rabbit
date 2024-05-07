@@ -20,7 +20,7 @@ const ModalComponent = ({
           className="close-button text-primary-purple1 w-8"
           onClick={() => setIsModal(false)}
         />
-        <div className="px-2 py-16 sm:px-12">{children}</div>
+        <div className="px-2 py-12 sm:px-12">{children}</div>
       </div>
     </div>
   );
