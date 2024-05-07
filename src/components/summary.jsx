@@ -36,7 +36,6 @@ const Summary = () => {
       });
       await getCustomBrands();
     } catch (error) {
-      console.log(error);
     } finally {
       setLoading(false);
     }
@@ -47,6 +46,7 @@ const Summary = () => {
       setClinicalRationale(brand.clinical_rationale);
       setTreatment(brand.treatment);
       setMedicalCondition(brand.medical_condition);
+      setHealthCondition(brand.health_condition_id);
     }
   }, [brand]);
 
