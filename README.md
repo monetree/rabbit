@@ -18,3 +18,7 @@ Use the following credentials to access the admin panel:
 
 - **Email**: admin@soubhagya.com
 - **Password**: admin
+
+Call me on below number if any doubts. if you need rds database access to test you can ask me.
+
+- **mob**: +91 9853092550
