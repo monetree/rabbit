@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { loginUser } from "../../apis/api";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const login = (ev) => {
+  const login = async (ev) => {
     ev.preventDefault();
-
-    if (email === "admin@soubhagya.com" && password === "admin") {
+    const res = await loginUser({ email, password });
+    if(res.data){
       window.location.href = "/dashboard";
     } else {
       alert("Invalid credentials");

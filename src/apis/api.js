@@ -33,6 +33,10 @@ instance.interceptors.response.use(
 
 
 
+
+export const loginUser = (params = {}) => {
+  return instance.post("/user/login", params);
+};
 export const createUser = (params = {}) => {
   return instance.post("/user/create-user", params);
 };
