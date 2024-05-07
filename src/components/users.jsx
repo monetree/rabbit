@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import {
-  createHsaAdministrator,
-  deleteHsaAdministrator,
-  getHsaAdministrators,
-  updateHsaAdministrator,
+  createUser,
+  deleteUser,
+  getUsers,
+  updateUser,
 } from "../apis/api";
 import Search from "./search";
 import ModalComponent from "./modal";
@@ -12,80 +12,97 @@ import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import PaginationComponent from "./pagination";
 
-const HsaAdministrators = () => {
+const Users = () => {
   const [search, setSearch] = useState("");
-  const [hsaAdministrators, setHsaAdministrators] = useState([]);
-  const [hsaAdministrator, setHsaAdministrator] = useState(null);
+  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState(null);
+
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
+
   const [newItem, setNewItem] = useState(false);
   const [page, setPage] = useState(1);
 
-  const fetchHsaAdministrators = async () => {
+  const fetchUsers = async () => {
     try {
-      const res = await getHsaAdministrators();
-      setHsaAdministrators(res.data);
+      const res = await getUsers();
+      setUsers(res.data);
     } catch (error) {
       console.log(error);
     } finally {
     }
   };
-  const createHsa = async (ev) => {
+  const createRecord = async (ev) => {
     ev.preventDefault();
 
     try {
-      await createHsaAdministrator({ name: name });
-      await fetchHsaAdministrators();
+      await createUser({ name, email, phone});
+      await fetchUsers();
     } catch (error) {
-      console.log(error);
+      alert("Error creating user");
     } finally {
       setNewItem(false);
     }
   };
-  const updateHsa = async (ev) => {
+  const updateRecord = async (ev) => {
     ev.preventDefault();
     try {
-      await updateHsaAdministrator(hsaAdministrator);
-      await fetchHsaAdministrators();
+      await updateUser(user);
+      await fetchUsers();
     } catch (error) {
-      console.log(error);
+      alert("Error updating user");
     } finally {
-      setHsaAdministrator(null);
+      setUser(null);
     }
   };
-  const deleteHsa = async (id) => {
-    await deleteHsaAdministrator(id);
-    await fetchHsaAdministrators();
+
+  const updateStatus = async (id, status, user) => {
+    try {
+      await updateUser({  id, is_active: status, name: user.name, email: user.email, phone: user.phone});
+      await fetchUsers();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+  const deleteRecord = async (id) => {
+    await deleteUser(id);
+    await fetchUsers();
   };
 
   const deletePopup = (id) => {
     confirmAlert({
       title: "Confirm to delete",
       message:
-        "Are you sure to do this. Deleting will remove all the data related to this hsa-administrator",
+        "Are you sure to do this. Deleting will remove all the data related to this user",
       buttons: [
         {
           label: "Yes",
-          onClick: () => deleteHsa(id),
+          onClick: () => deleteRecord(id),
         },
         {
           label: "No",
-          onClick: () => setHsaAdministrator(null),
+          onClick: () => setUser(null),
         },
       ],
     });
   };
 
   useEffect(() => {
-    fetchHsaAdministrators();
+    fetchUsers();
   }, []);
 
-  const filteredItems = hsaAdministrators.filter((item) =>
+  const filteredItems = users.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
     <>
       <div className="py-4 flex justify-end">
+        <p className="mt-4 mr-16 italic">Min <imp>10 records</imp> required to enable pagination </p>
         <div style={{ width: "500px" }}>
           <Search setSearch={setSearch} />
         </div>
@@ -111,16 +128,29 @@ const HsaAdministrators = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <span className="mt-0.5">Add New HSA</span>
+            <span className="mt-0.5">Add New User</span>
           </button>
         </div>
       </div>
       <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
-            <th scope="col" class="px-6 py-3">
-              Hsa-Administrator Name
+          <th scope="col" class="px-6 py-3">
+              Is Active
             </th>
+
+
+            <th scope="col" class="px-6 py-3">
+              Name
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Email
+            </th>
+            
+            <th scope="col" class="px-6 py-3">
+              Phone
+            </th>
+         
             <th scope="col" class="px-6 py-3">
               Action
             </th>
@@ -129,21 +159,60 @@ const HsaAdministrators = () => {
         <tbody>
           {filteredItems
             .slice((page - 1) * 10, page * 10)
-            .map((hsaAdministrator, index) => (
+            .map((item, index) => (
               <tr
                 class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                 key={index}
               >
+
+                <th
+                  scope="row"
+                  class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-xs"
+                >
+                  <div class="flex items-center">
+                    <input
+                      onChange={(e) => updateStatus(item.id, e.target.checked, item)}
+                      checked={item.is_active}
+                      id="default-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
+                    />
+                    <label
+                      for="default-checkbox"
+                      class="ms-2 mt-1 text-xs font-medium text-gray-900 dark:text-gray-300"
+                    >
+                      {item.is_active ? "Yes" : "No"}
+                    </label>
+                  </div>
+                </th>
+
+
+
                 <th
                   scope="row"
                   class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
-                  {hsaAdministrator.name}
+                  {item.name}
+                </th>
+                <th
+                  scope="row"
+                  class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  {item.email}
+                </th>
+
+
+          
+                <th
+                  scope="row"
+                  class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  {item.phone}
                 </th>
                 <td class="px-4 py-2 space-x-4 flex">
                   <label
                     className="cursor-pointer hover:text-gray-700"
-                    onClick={() => setHsaAdministrator(hsaAdministrator)}
+                    onClick={() => setUser(item)}
                   >
                     <svg
                       class="w-4 h-4 text-gray-800 dark:text-white"
@@ -165,7 +234,7 @@ const HsaAdministrators = () => {
                   </label>
                   <label
                     className="cursor-pointer hover:text-gray-700"
-                    onClick={() => deletePopup(hsaAdministrator.id)}
+                    onClick={() => deletePopup(item.id)}
                   >
                     <svg
                       class="w-4 h-4 text-gray-800 dark:text-white"
@@ -191,10 +260,10 @@ const HsaAdministrators = () => {
         </tbody>
       </table>
 
-      {hsaAdministrators.length === 10 ? (
+      {users.length > 10 ? (
         <nav aria-label="Page navigation example" className="mt-8 float-right">
           <PaginationComponent
-            brands={hsaAdministrators}
+            brands={users}
             setPage={setPage}
             page={page}
           />
@@ -203,9 +272,11 @@ const HsaAdministrators = () => {
         ""
       )}
 
-      {hsaAdministrator ? (
-        <ModalComponent setIsModal={setHsaAdministrator}>
-          <form className="max-w-sm mx-auto" onSubmit={updateHsa}>
+
+
+      {user ? (
+        <ModalComponent setIsModal={setUser}>
+          <form className="max-w-sm mx-auto" onSubmit={updateRecord}>
             <div className="mb-5">
               <label
                 htmlFor="email"
@@ -217,16 +288,65 @@ const HsaAdministrators = () => {
                 type="text"
                 id="name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                placeholder="hsa-administrator name"
-                value={hsaAdministrator.name}
+                placeholder="Name"
+                value={user.name}
                 onChange={(e) =>
-                  setHsaAdministrator({
-                    ...hsaAdministrator,
+                  setUser({
+                    ...user,
                     name: e.target.value,
                   })
                 }
               />
             </div>
+
+
+            <div className="mb-5">
+              <label
+                htmlFor="email"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Email
+              </label>
+              <input
+                type="text"
+                id="email"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                placeholder="name@example.com"
+                value={user.email}
+                onChange={(e) =>
+                  setUser({
+                    ...user,
+                    email: e.target.value,
+                  })
+                }
+              />
+            </div>
+
+
+
+            <div className="mb-5">
+              <label
+                htmlFor="phone"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Phone
+              </label>
+              <input
+                type="text"
+                id="phone"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                placeholder="+13939399393"
+                value={user.phone}
+                onChange={(e) =>
+                  setUser({
+                    ...user,
+                    phone: e.target.value,
+                  })
+                }
+              />
+            </div>
+
+
 
             <button
               type="submit"
@@ -242,7 +362,7 @@ const HsaAdministrators = () => {
 
       {newItem ? (
         <ModalComponent setIsModal={setNewItem}>
-          <form className="max-w-sm mx-auto" onSubmit={createHsa}>
+          <form className="max-w-sm mx-auto" onSubmit={createRecord}>
             <div className="mb-5">
               <label
                 htmlFor="email"
@@ -254,9 +374,46 @@ const HsaAdministrators = () => {
                 type="text"
                 id="name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                placeholder="hsa-administrator name"
+                placeholder="User name"
                 value={name}
-                onChange={() => setName(event.target.value)}
+                onChange={(ev) => setName(ev.target.value)}
+              />
+            </div>
+
+
+            <div className="mb-5">
+              <label
+                htmlFor="email"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Email
+              </label>
+              <input
+                type="text"
+                id="email"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                placeholder="name@example.com"
+                value={email}
+                onChange={(ev) => setEmail(ev.target.value)}
+              />
+            </div>
+
+
+
+            <div className="mb-5">
+              <label
+                htmlFor="phone"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Phone
+              </label>
+              <input
+                type="text"
+                id="phone"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                placeholder="+139939393"
+                value={phone}
+                onChange={(ev) => setPhone(ev.target.value)}
               />
             </div>
 
@@ -275,4 +432,4 @@ const HsaAdministrators = () => {
   );
 };
 
-export default HsaAdministrators;
+export default Users;

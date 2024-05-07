@@ -7,7 +7,7 @@ const Login = () => {
   const login = (ev) => {
     ev.preventDefault();
 
-    if (email === "admin@crateshealth.com" && password === "admin") {
+    if (email === "admin@soubhagya.com" && password === "admin") {
       window.location.href = "/dashboard";
     } else {
       alert("Invalid credentials");
