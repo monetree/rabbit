@@ -72,7 +72,7 @@ const Summary = () => {
       setLoading(true);
       const payload = {
         brand_id: brand.id,
-        health_condition_id: healthCondition,
+        health_condition_id: healthConditions[0].value,
         medical_condition: medicalCondition,
         treatment: treatment,
         clinical_rationale: clinicalRationale,
