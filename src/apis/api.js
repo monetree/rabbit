@@ -45,3 +45,5 @@ export const deleteUser = (id) => {
 export const getUsers = (params) =>
   instance.get(`/user/users`, { params });
 
+export const uploadFile = (payload, headers) =>
+instance.post(`/media/image-upload`, payload, headers);

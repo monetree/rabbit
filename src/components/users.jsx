@@ -4,6 +4,7 @@ import {
   deleteUser,
   getUsers,
   updateUser,
+  uploadFile,
 } from "../apis/api";
 import Search from "./search";
 import ModalComponent from "./modal";
@@ -16,14 +17,17 @@ const Users = () => {
   const [search, setSearch] = useState("");
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState(null);
+  const [avatar, setAvatar] = useState(null);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [imageUploading, setimageUploading] = useState(false);
 
 
   const [newItem, setNewItem] = useState(false);
   const [page, setPage] = useState(1);
+
 
   const fetchUsers = async () => {
     try {
@@ -67,6 +71,27 @@ const Users = () => {
     }
   }
 
+  const uploadImage = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      setimageUploading(true);
+      const response = await uploadFile(formData);
+      const data = response.data;
+      const img_url = data.imageUrl;
+      setAvatar({ ...avatar, avatar: img_url });
+      await updateUser({  id: avatar.id, avatar: img_url, is_active: avatar.is_active, name: avatar.name, email: avatar.email, phone: avatar.phone});
+      await fetchUsers();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setimageUploading(false);
+    }
+  } 
+
+
+
+
 
   const deleteRecord = async (id) => {
     await deleteUser(id);
@@ -101,7 +126,63 @@ const Users = () => {
 
   return (
     <>
-      <div className="py-4 flex justify-end">
+<div className="flex justify-center items-center bg-gray-100">
+
+    <div className="grid place-items-center bg-gray-100 p-4">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          {
+            avatar ? (
+              <a href="#">
+              <img className="rounded-t-lg" src={avatar.avatar ? avatar.avatar: "https://flowbite.com/docs/images/blog/image-1.jpg"} alt="" />
+          </a>
+            ):(
+              <div class="flex items-center justify-center w-full h-48 bg-gray-300 rounded sm:w-96 dark:bg-gray-700">
+              <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                  <path d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z"/>
+              </svg>
+          </div>
+            )
+          }
+        
+            <div className="p-5">
+                <a href="#">
+                   
+
+                    {
+                    avatar && avatar.name ? (
+                
+                      <div className="mb-4">
+                      <p>Name: <span className="font-semibold">{avatar?.name}</span></p>
+                      <p>Email: <span className="font-semibold">{avatar?.email}</span></p>
+                      <p>Phone: <span className="font-semibold">{avatar?.phone}</span></p>
+                      </div>
+
+                    ):(
+                      <div>
+                        <h5 className="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">No avatar selected .. </h5>
+                    </div>
+                    )
+                   }
+
+
+                </a>
+                <form className="inline-flex items-center px-3 py-2 text-sm font-medium text-center bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  <label htmlFor="file-upload" className="cursor-pointer text-white flex items-center">
+                    {imageUploading ? "Uploading please wait " : "Change avatar"}  
+                      <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 5h12m0 0L9 1m4 4L9 9" />
+                      </svg>
+                  </label>
+                  <input id="file-upload" onChange={(e) => uploadImage(e.target.files[0])} type="file" className="hidden" accept="image/*" />
+              </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div>
+    <div className="py-4 flex justify-end">
         <p className="mt-4 mr-16 italic">Min <imp>10 records</imp> required to enable pagination </p>
         <div style={{ width: "500px" }}>
           <Search setSearch={setSearch} />
@@ -154,6 +235,12 @@ const Users = () => {
             <th scope="col" class="px-6 py-3">
               Action
             </th>
+
+            <th scope="col" class="px-6 py-3">
+              Avatar
+            </th>
+
+
           </tr>
         </thead>
         <tbody>
@@ -255,10 +342,28 @@ const Users = () => {
                     </svg>
                   </label>
                 </td>
+
+                <th
+                  scope="row"
+                  class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                   <button
+                   onClick={() => setAvatar(item)}
+            type="button"
+            className="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 flex items-center justify-center"
+          >
+         
+            <span className="mt-0.5">View avatar</span>
+          </button>
+                </th>
+
+
               </tr>
             ))}
         </tbody>
       </table>
+      </div>
+    </div>
 
       {users.length > 10 ? (
         <nav aria-label="Page navigation example" className="mt-8 float-right">

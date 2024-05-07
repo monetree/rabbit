@@ -7,7 +7,7 @@ const Dashboard = () => {
     <>
       <div>
         <Header />
-        <div className="p-16 mt-12">
+        <div className="p-8 mt-8">
           <div class="relative overflow-x-auto">
             <Routes>
               <Route path="/" element={<Users />} />
