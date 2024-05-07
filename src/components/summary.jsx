@@ -169,15 +169,19 @@ const Summary = () => {
               </th>
 
               <th scope="col" class="px-4 py-3">
+                Lmn
+              </th>
+
+              <th scope="col" class="px-4 py-3">
+                Reimbursement
+              </th>
+
+              <th scope="col" class="px-4 py-3">
                 Approval
               </th>
 
               <th scope="col" class="px-4 py-3">
                 Action
-              </th>
-
-              <th scope="col" class="px-4 py-3">
-                Preview
               </th>
             </tr>
           </thead>
@@ -215,6 +219,32 @@ const Summary = () => {
                   </a>
                 </th>
 
+                <th
+                  scope="row"
+                  class="px-4 py-2 font-medium  whitespace-nowrap  text-xs"
+                >
+                  <a
+                    target="_blank"
+                    href={item.file_location}
+                    className="hover:underline"
+                  >
+                    View
+                  </a>
+                </th>
+
+                <th
+                  scope="row"
+                  class="px-4 py-2 font-medium  whitespace-nowrap  text-xs"
+                >
+                  <a
+                    target="_blank"
+                    href={item.reimbursement_receipt}
+                    className="hover:underline"
+                  >
+                    View
+                  </a>
+                </th>
+
                 <td
                   scope="row"
                   class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
@@ -245,20 +275,7 @@ const Summary = () => {
                     type="button"
                     class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
-                    Create LMN
-                  </button>
-                </td>
-
-                <td
-                  scope="row"
-                  class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                >
-                  <button
-                    onClick={() => setBrand(item)}
-                    type="button"
-                    class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 "
-                  >
-                    View account
+                    {!item.file_location ? "Create LMN" : "Update LMN"}
                   </button>
                 </td>
               </tr>
