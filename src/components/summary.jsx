@@ -46,6 +46,7 @@ const Summary = () => {
       setClinicalRationale(brand.clinical_rationale);
       setTreatment(brand.treatment);
       setMedicalCondition(brand.medical_condition);
+      setHealthConditions(brand.disease);
       setHealthCondition(brand.health_condition_id);
     }
   }, [brand]);
@@ -90,7 +91,6 @@ const Summary = () => {
   useEffect(() => {
     getSummary();
     getCustomBrands();
-    fetchHealthConditions();
   }, []);
 
   return (
