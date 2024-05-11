@@ -31,9 +31,6 @@ instance.interceptors.response.use(
   }
 );
 
-
-
-
 export const loginUser = (params = {}) => {
   return instance.post("/user/login", params);
 };
@@ -46,8 +43,7 @@ export const updateUser = (params = {}) => {
 export const deleteUser = (id) => {
   return instance.delete(`/user/delete-user/${id}`);
 };
-export const getUsers = (params) =>
-  instance.get(`/user/users`, { params });
+export const getUsers = (params) => instance.get(`/user/users`, { params });
 
 export const uploadFile = (payload, headers) =>
-instance.post(`/media/image-upload`, payload, headers);
+  instance.post(`/media/image-upload`, payload, headers);

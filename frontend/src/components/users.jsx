@@ -18,6 +18,8 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState(null);
   const [avatar, setAvatar] = useState(null);
+  const [filter, setFilter] = useState("");
+  const [errors, setErrors] = useState({});
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -36,8 +38,38 @@ const Users = () => {
     } finally {
     }
   };
+
+  const validateNewRecord = () => {
+    const newErrors = {};
+    if (!name) newErrors.name = "Name is required";
+    if (!email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = "Email is invalid";
+    }
+    if (!phone) newErrors.phone = "Phone is required";
+    return newErrors;
+  };
+
+  const validateExistingRecord = () => {
+    const newErrors = {};
+    if (!user?.name) newErrors.name = "Name is required";
+    if (!user?.email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(user?.email)) {
+      newErrors.email = "Email is invalid";
+    }
+    if (!user?.phone) newErrors.phone = "Phone is required";
+    return newErrors;
+  };
+
   const createRecord = async (ev) => {
     ev.preventDefault();
+    const validationErrors = validateNewRecord();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
 
     try {
       await createUser({ name, email, phone });
@@ -48,8 +80,16 @@ const Users = () => {
       setNewItem(false);
     }
   };
+
   const updateRecord = async (ev) => {
     ev.preventDefault();
+
+    const validationErrors = validateExistingRecord();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
     try {
       await updateUser(user);
       await fetchUsers();
@@ -127,9 +167,15 @@ const Users = () => {
     fetchUsers();
   }, []);
 
-  const filteredItems = users.filter((item) =>
-    item.name.toLowerCase().includes(search.toLowerCase()),
-  );
+  const filteredItems = users.filter((item) => {
+    const matchesName = item.name.toLowerCase().includes(search.toLowerCase());
+    const matchesActiveStatus =
+      filter === "" ||
+      (filter === "Yes" && item.is_active) ||
+      (filter === "No" && !item.is_active);
+
+    return matchesName && matchesActiveStatus;
+  });
 
   return (
     <>
@@ -234,6 +280,15 @@ const Users = () => {
               Tutorial{" "}
             </a>
 
+            <select
+              className="bg-gray-50 m-w-16 h-12 mt-1 mr-2 border border-gray-300 text-gray-900 text-sm rounded-lg"
+              onChange={(e) => setFilter(e.target.value)}
+            >
+              <option value={""}>Choose status</option>
+              <option value="Yes">Active</option>
+              <option value="No">In-active</option>
+            </select>
+
             <div style={{ width: "500px" }}>
               <Search setSearch={setSearch} />
             </div>
@@ -244,7 +299,7 @@ const Users = () => {
             >
               <button
                 type="button"
-                className="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 flex items-center justify-center"
+                className="px-3 py-2 h-10 mt-1 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 flex items-center justify-center"
               >
                 <svg
                   className="w-4 h-4 text-white mr-2"
@@ -259,7 +314,7 @@ const Users = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="mt-0.5">Add New User</span>
+                <span className="mt-0.5">Add </span>
               </button>
             </div>
           </div>
@@ -430,13 +485,17 @@ const Users = () => {
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="Name"
                 value={user.name}
-                onChange={(e) =>
+                onChange={(e) => {
                   setUser({
                     ...user,
                     name: e.target.value,
-                  })
-                }
+                  });
+                  setErrors({ ...errors, name: "" });
+                }}
               />
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name}</p>
+              )}
             </div>
 
             <div className="mb-5">
@@ -452,13 +511,17 @@ const Users = () => {
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="name@example.com"
                 value={user.email}
-                onChange={(e) =>
+                onChange={(e) => {
                   setUser({
                     ...user,
                     email: e.target.value,
-                  })
-                }
+                  });
+                  setErrors({ ...errors, email: "" });
+                }}
               />
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.email}</p>
+              )}
             </div>
 
             <div className="mb-5">
@@ -474,13 +537,17 @@ const Users = () => {
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="+13939399393"
                 value={user.phone}
-                onChange={(e) =>
+                onChange={(e) => {
                   setUser({
                     ...user,
                     phone: e.target.value,
-                  })
-                }
+                  });
+                  setErrors({ ...errors, phone: "" });
+                }}
               />
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.phone}</p>
+              )}
             </div>
 
             <button
@@ -500,7 +567,7 @@ const Users = () => {
           <form className="max-w-sm mx-auto" onSubmit={createRecord}>
             <div className="mb-5">
               <label
-                htmlFor="email"
+                htmlFor="name"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Name
@@ -509,10 +576,16 @@ const Users = () => {
                 type="text"
                 id="name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                placeholder="User name"
+                placeholder="Name"
                 value={name}
-                onChange={(ev) => setName(ev.target.value)}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  setErrors({ ...errors, name: "" });
+                }}
               />
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name}</p>
+              )}
             </div>
 
             <div className="mb-5">
@@ -528,8 +601,14 @@ const Users = () => {
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="name@example.com"
                 value={email}
-                onChange={(ev) => setEmail(ev.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setErrors({ ...errors, email: "" });
+                }}
               />
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email}</p>
+              )}
             </div>
 
             <div className="mb-5">
@@ -543,10 +622,16 @@ const Users = () => {
                 type="text"
                 id="phone"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                placeholder="+139939393"
+                placeholder="+13939399393"
                 value={phone}
-                onChange={(ev) => setPhone(ev.target.value)}
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                  setErrors({ ...errors, phone: "" });
+                }}
               />
+              {errors.phone && (
+                <p className="text-red-500 text-sm">{errors.phone}</p>
+              )}
             </div>
 
             <button

@@ -8,7 +8,8 @@ const Login = () => {
   const login = async (ev) => {
     ev.preventDefault();
     const res = await loginUser({ email, password });
-    if(res.data){
+    if (res.data) {
+      localStorage.setItem("jwt_token", res.data.token);
       window.location.href = "/dashboard";
     } else {
       alert("Invalid credentials");
