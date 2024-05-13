@@ -34,9 +34,6 @@ const Header = () => {
                 className="h-8 me-3"
                 alt="FlowBite Logo"
               />
-              <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                Crud APP
-              </span>
             </a>
           </div>
           <div className="flex items-center">
