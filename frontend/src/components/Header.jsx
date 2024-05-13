@@ -30,7 +30,7 @@ const Header = () => {
             </button>
             <a href="/dashboard" className="flex ms-2 md:me-24">
               <img
-                src="https://flowbite.com/docs/images/logo.svg"
+                src="https://www.generationlab.com/assets/logo.svg"
                 className="h-8 me-3"
                 alt="FlowBite Logo"
               />
