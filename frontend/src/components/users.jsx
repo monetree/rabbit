@@ -269,17 +269,6 @@ const Users = () => {
 
         <div>
           <div className="py-4 flex justify-end">
-            <p className="mt-4 mr-16 italic">
-              Min <imp>10 records</imp> required to enable pagination{" "}
-            </p>
-            <a
-              target="_blank"
-              className="text-blue-800 mr-4 mt-4"
-              href="https://www.loom.com/share/ce20916da3c14409a82cbba0aec7d08e"
-            >
-              Tutorial{" "}
-            </a>
-
             <select
               className="bg-gray-50 m-w-16 h-12 mt-1 mr-2 border border-gray-300 text-gray-900 text-sm rounded-lg"
               onChange={(e) => setFilter(e.target.value)}
